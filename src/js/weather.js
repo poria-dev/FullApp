@@ -1,7 +1,9 @@
 // variables
 
 const btn = document.getElementById("btn")
+const btnorigin = document.getElementById("btnorigin")
 const inp = document.getElementById("inp")
+const inp2 = document.getElementById("inp2")
 const backimg = document.getElementById("backimg")
 const cityCountryText = document.getElementById("cityCountryText")
 const temperature = document.getElementById("temperature")
@@ -20,6 +22,9 @@ const menumobile = document.querySelectorAll(".menumobile>li")
 const timeSvg = document.querySelector("#timeSvg")
 const warning = document.getElementById("warning")
 const aniundersearch = document.getElementById("aniundersearch")
+const page_find_origin = document.getElementById("page_find_origin")
+const chart = document.querySelector(".chart")
+const nameorigin = document.querySelector(".nameorigin")
 
 
 
@@ -61,6 +66,8 @@ selectmenu.forEach((val) => {
 
         switchli.style.top = `${top}px  `
 
+        page_findOrigin(x)
+
 
 
     })
@@ -83,11 +90,35 @@ menumobile.forEach((val) => {
 
         switchmobile.style.left = `${savetop}px`
 
+        page_findOrigin(mobiletop)
 
     })
 })
 
 // select menu mobile 
+
+
+
+// page_findOrigin
+
+function page_findOrigin(x) {
+
+    if (x.getAttribute("data-name") == "findorigin") {
+
+        page_find_origin.classList.remove("hidden")
+        page_find_origin.classList.add("flex")
+
+    } else {
+        page_find_origin.classList.add("hidden")
+        page_find_origin.classList.remove("flex")
+    }
+
+}
+
+// page_findOrigin
+
+
+
 
 
 // onload for load
@@ -930,3 +961,112 @@ function hours(abouthours) {
 }
 
 // next hours
+
+
+
+
+
+// page tow for origin find
+
+
+btnorigin.addEventListener("click", async () => {
+
+    let _valueorigin = inp2.value.trim().toLowerCase()
+    getname_chart(_valueorigin)
+
+})
+
+// getname_chart("pooria")
+
+async function getname_chart(c) {
+
+    inp2.style.border = ""
+
+    if (c != "" && isNaN(c)) {
+
+        nameorigin.textContent = c
+
+        const res = await fetch(`https://api.nationalize.io/?name=${c}`)
+        const data = await res.json()
+
+        chart.innerHTML = ""
+
+        data.country.map((val, index) => {
+
+            let navar = val.probability * 100
+
+            let div = document.createElement("div")
+
+            div.innerHTML = `
+
+    <div class="flex items-end justify-between mb-3">
+
+        <div class="flex items-center gap-3">
+
+            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.06] text-xs font-medium text-white/60">
+                ${val.country_id}
+            </span>
+
+            <div class="flex flex-col gap-1">
+
+                <span class="text-sm font-medium text-white/80">
+                    ${val.country_id}
+                </span>
+
+                <span class="text-[9px] uppercase tracking-[0.2em] text-white/25">
+                    Possible origin
+                </span>
+
+            </div>
+
+        </div>
+
+        <span class="text-lg font-semibold text-sky-400">
+            ${navar.toFixed(1)}%
+        </span>
+
+    </div>
+
+
+    <div class="relative w-full h-2.5 rounded-full bg-white/[0.05] overflow-hidden">
+
+        <div
+            class="originProgress absolute left-0 top-0 h-full w-0 rounded-full bg-sky-400 shadow-[0_0_18px_rgba(56,189,248,0.5)] transition-all duration-1000 ease-out">
+        </div>
+
+    </div>
+
+
+    <div class="flex justify-between mt-2 text-[9px] text-white/20">
+
+        <span>0%</span>
+
+        <span>25%</span>
+
+        <span>50%</span>
+
+        <span>75%</span>
+
+        <span>100%</span>
+
+    </div>
+
+`
+
+            chart.appendChild(div)
+
+            div.querySelector(".originProgress").style.width = `${navar}%`
+
+        })
+
+    } else {
+
+        inp2.style.border = "1px solid red"
+
+    }
+
+
+}
+
+
+// page tow for origin find

@@ -1,7 +1,5 @@
 <!-- npx @tailwindcss/cli -i ./src/style/input.css -o ./src/style/output.css --watch -->
-
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -36,7 +34,7 @@
 
                     <div class="switchli duration-300 absolute flex h-16 w-full px-4 py-3 rounded-xl bg-sky-400/10 border border-sky-400/20 text-sky-300"></div>
 
-                    <li class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sky-300 transition-all duration-300 hover:bg-sky-400/15">
+                    <li data-name="weather" class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sky-300 transition-all duration-300 hover:bg-sky-400/15">
 
                         <span class="w-9 h-9 flex items-center justify-center rounded-lg bg-sky-400/10">
 
@@ -60,7 +58,7 @@
 
                     </li>
 
-                    <li class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-white/45 transition-all duration-300 hover:bg-white/5 hover:text-white">
+                    <li data-name="distance" class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-white/45 transition-all duration-300 hover:bg-white/5 hover:text-white">
 
                         <span
                             class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 group-hover:bg-white/10">
@@ -87,7 +85,7 @@
 
                     </li>
 
-                    <li class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-white/45 transition-all duration-300 hover:bg-white/5 hover:text-white">
+                    <li data-name="findorigin" class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-white/45 transition-all duration-300 hover:bg-white/5 hover:text-white">
 
                         <span
                             class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 group-hover:bg-white/10">
@@ -118,7 +116,7 @@
 
                     </li>
 
-                    <li class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-white/45 transition-all duration-300 hover:bg-white/5 hover:text-white">
+                    <li data-name="shop" class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-white/45 transition-all duration-300 hover:bg-white/5 hover:text-white">
 
                         <span
                             class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 group-hover:bg-white/10">
@@ -143,7 +141,7 @@
 
                     </li>
 
-                    <li class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-white/45 transition-all duration-300 hover:bg-white/5 hover:text-white">
+                    <li data-name="aboutme" class="group flex items-center gap-3 w-full px-4 py-3 rounded-xl text-white/45 transition-all duration-300 hover:bg-white/5 hover:text-white">
 
                         <span
                             class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 group-hover:bg-white/10">
@@ -310,18 +308,127 @@
 
     </div>
 
-</div>
+               </div>
 
 
                <!-- loading fot search page -->
 
 
+
+
             <!-- toast warning -->
+
+
+
+
+
+               <!-- / / / / / / / / / -->
+
+
+            <!-- page about find origin -->
+
+               <!-- / / / / / / / / / -->
+
+
+
+                <div id="page_find_origin" class="absolute hidden w-full h-full z-[99999] bg-[#050609]/95 backdrop-blur-xl p-4 sm:p-6 lg:p-10">
+
+    <div class="w-full h-full max-w-7xl mx-auto rounded-[2rem] border border-white/10 bg-white/[0.025] overflow-hidden shadow-[0_25px_100px_rgba(0,0,0,0.5)] flex flex-col">
+
+        <div class="inputorigin w-full shrink-0 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center gap-2 sm:gap-3">
+
+            <input id="inp2" class="border border-white/10 h-12 sm:h-14 bg-white/[0.04] text-white outline-none w-full lg:w-[50%] min-w-0 px-4 lg:px-5 rounded-xl placeholder:capitalize placeholder:font-bold placeholder:text-white/30 focus:border-sky-400/40 focus:bg-white/[0.06] transition-all duration-300" type="text" placeholder="Enter a name">
+
+            <button id="btnorigin" class="shrink-0 h-12 sm:h-14 px-5 sm:px-7 rounded-xl border border-sky-400/20 bg-sky-400/10 text-sky-300 font-bold hover:bg-sky-400/15 hover:border-sky-400/40 active:scale-95 transition-all duration-300">
+                Search
+            </button>
+
+        </div>
+
+        <figure class="imgback_origin relative mx-4 sm:mx-6 lg:mx-8 h-[35%] sm:h-[40%] shrink-0 rounded-2xl overflow-hidden border border-white/10">
+
+            <img src="img/file_000000002b5881f5ab280796dbf1bfe3.jpg" alt="" class="absolute inset-0 object-cover w-full h-full">
+
+
+<div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-10 lg:p-14 bg-gradient-to-t from-black/90 via-black/35 to-transparent">
+
+    <div class="w-full max-w-3xl">
+
+        <h4 class="mb-3 lg:w-[40%] px-1 rounded-xl font-bold border border-white/20 flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.3em] text-white bg-black/50 py-3">
+            <span class="w-8  h-[0.5px] bg-sky-400"></span>
+            Name origin analyzed
+        </h4>
+
+        <h2 class="flex flex-wrap items-center gap-x-3 text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white">
+            More than
+            <span class="text-sky-400 drop-shadow-[0_0_25px_rgba(56,189,248,0.45)]">
+                a name.
+            </span>
+        </h2>
+
+        <p class="mt-5 max-w-xl text-sm sm:text-base lg:text-lg leading-7 text-white/55">
+            Discover the story, meaning, origin and identity hidden behind every name.
+        </p>
+
+        <div class="mt-7 flex items-center gap-3">
+            <div class="h-1 w-1 rounded-full bg-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.9)]"></div>
+            <span class="text-xs uppercase tracking-[0.2em] text-white/40">
+                Explore the meaning
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+        </figure>
+
+        <div class="analyzed flex-1 min-h-0 m-4 sm:m-6 lg:m-8 mt-3 sm:mt-4 lg:mt-5 rounded-2xl border border-white/10 bg-white/[0.025] overflow-hidden">
+
+
+<div class="h-full w-full flex flex-col items-center justify-center px-5 text-white">
+
+    <div class="name mb-10 text-center">
+        <h5 class="nameorigin text-2xl sm:text-3xl font-semibold text-white">
+            Pooria
+        </h5>
+    </div>
+
+
+    <div class="chart w-full max-w-2xl">
+
+
+
+    </div>
+
+</div>
+
+
+
+        </div>
+
+    </div>
+
+                </div>
+
+
+                
+               <!-- / / / / / / / / / -->
+
+            <!-- page about find origin -->
+
+               <!-- / / / / / / / / / -->
+
+
+
+
 
 
             <!-- top -->
 
-            <div class="both w-full h-[70%] relative overflow-hidden flex flex-wrap p-3 sm:p-4 lg:px-5">
+            <div class="both w-full h-[70%]  relative overflow-hidden flex flex-wrap p-3 sm:p-4 lg:px-5">
 
                 <!-- top bar -->
 
@@ -394,7 +501,7 @@
 
                 <!-- weather area -->
 
-                <div class="org w-full h-[85%] relative z-10 flex gap-3 lg:gap-5 min-w-0">
+                <div class="org my-5 lg:my-0 w-full h-[85%] relative z-10 flex gap-3 lg:gap-5 min-w-0">
 
                     <!-- weather image box -->
 
@@ -534,8 +641,7 @@
 
                             <div class="about_weather w-full min-h-[25%] justify-start flex items-center border-t border-white/15 gap-2 sm:gap-4 lg:gap-6 pt-5">
 
-                                <div
-                                    class="humidity flex items-center gap-2 sm:gap-3 px-4 py-3 border border-white/10 bg-black/30 rounded-xl backdrop-blur-md">
+                                <div class="humidity flex items-center gap-2 sm:gap-3 px-2 py-2 lg:px-4 lg:py-4 border border-white/10 bg-black/30 rounded-xl backdrop-blur-md">
 
                                     <svg
                                         class="w-6 h-6 sm:w-7 sm:h-7 text-sky-300 shrink-0"
@@ -559,9 +665,7 @@
 
                                         </span>
 
-                                        <span
-                                            id="humidity"
-                                            class="text-base sm:text-xl font-bold text-white">
+                                        <span id="humidity" class="text-base sm:text-xl font-bold text-white">
                                         </span>
 
                                     </div>
@@ -569,7 +673,7 @@
                                 </div>
 
                                 <div
-                                    class="wind flex items-center gap-2 sm:gap-3 px-4 py-3 border border-white/10 bg-black/30 rounded-xl backdrop-blur-md">
+                                    class="wind flex items-center gap-2 sm:gap-3 px-2 py-2 lg:px-4 lg:py-4 border border-white/10 bg-black/30 rounded-xl backdrop-blur-md">
 
                                     <svg
                                         class="w-6 h-6 sm:w-7 sm:h-7 text-cyan-300 shrink-0"
@@ -592,23 +696,19 @@
 
                                         </span>
 
-                                        <span
-                                            id="windSpeed"
-                                            class="text-base sm:text-xl font-bold text-white">
+                                        <span id="windSpeed" class="text-[15px] sm:text-xl font-bold text-white">
                                         </span>
 
                                     </div>
 
                                 </div>
 
-                                <div
-                                    id="timeicon"
-                                    class="daynight flex items-center gap-2 sm:gap-3 px-4 py-3 border border-white/10 bg-black/30 rounded-xl backdrop-blur-md">
+                                <div id="timeicon" class="daynight flex items-center gap-2 sm:gap-3 px-1 lg:px-4 lg:py-4 py-1 border border-white/10 bg-black/30 rounded-xl backdrop-blur-md">
 
                                     <div id="timeSvg" class="shrink-0">
 
                                         <svg
-                                            class="w-6 h-6 sm:w-7 sm:h-7 text-amber-300 shrink-0"
+                                            class="w-4 h-4 lg:w-6 lg:h-6 sm:w-7 sm:h-7 text-amber-300 shrink-0"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24">
@@ -630,15 +730,13 @@
 
                                     <div class="flex flex-col gap-0.5">
 
-                                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-white/85">
+                                        <span class="text-[10px]  sm:text-xs uppercase tracking-widest text-white/85">
 
                                             Time
 
                                         </span>
 
-                                        <span
-                                            id="dayNight"
-                                            class="text-base sm:text-xl font-bold text-white">
+                                        <span id="dayNight" class="text-base sm:text-xl font-bold text-white">
                                         </span>
 
                                     </div>
@@ -731,13 +829,13 @@
 
         <!-- mobile menu -->
 
-        <div class="fixed lg:hidden bottom-0 left-0 z-[100] w-full h-[72px] px-3 pb-2 pt-1 bg-[#0b0c10]/95 backdrop-blur-xl border-t border-white/10">
+        <div class="fixed lg:hidden bottom-0 left-0 z-[1000000000000] w-full h-[72px] px-3 pb-2 pt-1 bg-[#0b0c10]/95 backdrop-blur-xl border-t border-white/10">
 
             <ul class="menumobile w-full relative h-full flex items-center justify-around gap-1">
 
                 <div class="switchmobile absolute left-0 w-1/5 h-full rounded-xl text-sky-300 bg-sky-400/10 border border-sky-400/20"></div>
 
-                <li class="flex-1 flex flex-col items-center justify-center gap-1 w-full h-full rounded-xl text-sky-300">
+                <li data-name="weather" class="flex-1 flex flex-col items-center justify-center gap-1 w-full h-full rounded-xl text-sky-300">
 
                     <svg
                         class="w-5 h-5"
@@ -761,7 +859,7 @@
 
                 </li>
 
-                <li class="flex-1 flex flex-col items-center justify-center gap-1 w-full h-full">
+                <li data-name="distance" class="flex-1 flex flex-col items-center justify-center gap-1 w-full h-full">
 
                     <svg
                         class="w-5 h-5"
@@ -790,7 +888,7 @@
 
                 </li>
 
-                <li class="flex-1 flex flex-col items-center justify-center gap-1 w-full h-full rounded-xl text-white/45 hover:text-white hover:bg-white/5 transition-all duration-300">
+                <li data-name="findorigin" class="flex-1 flex flex-col items-center justify-center gap-1 w-full h-full rounded-xl text-white/45 hover:text-white hover:bg-white/5 transition-all duration-300">
 
                     <svg
                         class="w-5 h-5"
@@ -820,7 +918,7 @@
 
                 </li>
 
-                <li class="flex flex-col items-center justify-center gap-1 w-full h-full rounded-xl text-white/45 hover:text-white hover:bg-white/5 transition-all duration-300 flex-1">
+                <li data-name="shop" class="flex flex-col items-center justify-center gap-1 w-full h-full rounded-xl text-white/45 hover:text-white hover:bg-white/5 transition-all duration-300 flex-1">
 
                     <svg
                         class="w-5 h-5"
@@ -844,7 +942,7 @@
 
                 </li>
 
-                <li class="flex-1 flex flex-col items-center justify-center gap-1 w-full h-full rounded-xl text-white/45 hover:text-white hover:bg-white/5 transition-all duration-300">
+                <li data-name="aboutme" class="flex-1 flex flex-col items-center justify-center gap-1 w-full h-full rounded-xl text-white/45 hover:text-white hover:bg-white/5 transition-all duration-300">
 
                     <svg
                         class="w-5 h-5"
