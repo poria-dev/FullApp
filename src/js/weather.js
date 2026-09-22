@@ -40,7 +40,7 @@ let lati = null
 let long = null
 let reg = /[a-z-A-Z]+\D/
 let flag = true
-
+let x;
 // important variable
 
 
@@ -991,10 +991,11 @@ async function getname_chart(c) {
 
         chart.innerHTML = ""
 
+
         data.country.map((val, index) => {
 
             let navar = val.probability * 100
-
+            let plus = 0
             let div = document.createElement("div")
 
             div.innerHTML = `
@@ -1022,7 +1023,7 @@ async function getname_chart(c) {
         </div>
 
         <span class="text-lg font-semibold text-sky-400">
-            ${navar.toFixed(1)}%
+            ${plus.toFixed(1)}%
         </span>
 
     </div>
@@ -1037,7 +1038,7 @@ async function getname_chart(c) {
     </div>
 
 
-    <div class="flex justify-between mt-2 text-[9px] text-white/20">
+    <div class="flex justify-between my-2 text-[9px] text-white/20">
 
         <span>0%</span>
 
@@ -1055,15 +1056,30 @@ async function getname_chart(c) {
 
             chart.appendChild(div)
 
-            div.querySelector(".originProgress").style.width = `${navar}%`
+            if (plus < navar) {
+
+                x = setInterval(() => {
+                    plus++
+                }, 100);
+
+            } else {
+
+                clearInterval(x)
+
+            }
+
+            div.querySelector(".originProgress").style.width = `${plus}%`
 
         })
+
+
 
     } else {
 
         inp2.style.border = "1px solid red"
 
     }
+
 
 
 }
