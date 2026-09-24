@@ -330,88 +330,153 @@
                <!-- / / / / / / / / / -->
 
 
+                <div id="page_find_origin" class="absolute hidden w-full h-full z-[99999] bg-[#050609]/95 backdrop-blur-xl p-3 sm:p-5 lg:p-8">
 
-        <div id="page_find_origin" class="absolute hidden w-full h-full z-[99999] bg-[#050609]/95 backdrop-blur-xl p-4 sm:p-6 lg:p-10">
+    <div class="w-full h-full max-w-7xl mx-auto rounded-[1.5rem] sm:rounded-[2rem] border border-white/10 bg-white/[0.025] overflow-hidden shadow-[0_25px_100px_rgba(0,0,0,0.5)] flex flex-col">
 
-    <div class="w-full h-full max-w-7xl mx-auto rounded-[2rem] border border-white/10 bg-white/[0.025] overflow-hidden shadow-[0_25px_100px_rgba(0,0,0,0.5)] flex flex-col">
+        <div class="inputorigin w-full shrink-0 px-3 sm:px-6 lg:px-8 py-3 sm:py-5 flex items-center gap-2 sm:gap-3">
 
-        <div class="inputorigin w-full shrink-0 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center gap-2 sm:gap-3">
+            <div class="relative w-full lg:w-[50%]">
 
-            <input id="inp2" class="border border-white/10 h-12 sm:h-14 bg-white/[0.04] text-white outline-none w-full lg:w-[50%] min-w-0 px-4 lg:px-5 rounded-xl placeholder:capitalize placeholder:font-bold placeholder:text-white/30 focus:border-sky-400/40 focus:bg-white/[0.06] transition-all duration-300" type="text" placeholder="Enter a name">
+                <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-white/25 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7" stroke-width="1.5"/>
+                    <path stroke-linecap="round" stroke-width="1.5" d="m20 20-4-4"/>
+                </svg>
 
-            <button id="btnorigin" class="shrink-0 h-12 sm:h-14 px-5 sm:px-7 rounded-xl border border-sky-400/20 bg-sky-400/10 text-sky-300 font-bold hover:bg-sky-400/15 hover:border-sky-400/40 active:scale-95 transition-all duration-300">
-                Search
+                <input id="inp2" class="border border-white/10 h-11 sm:h-14 bg-white/[0.04] text-white outline-none w-full min-w-0 pl-11 sm:pl-12 pr-4 rounded-xl sm:rounded-2xl placeholder:capitalize placeholder:font-bold placeholder:text-white/30 focus:border-sky-400/40 focus:bg-white/[0.06] transition-all duration-300" type="text" placeholder="Enter a name">
+
+            </div>
+
+            <button id="btnorigin" class="group shrink-0 h-11 sm:h-14 px-4 sm:px-7 rounded-xl sm:rounded-2xl border border-sky-400/20 bg-sky-400/10 text-sky-300 font-bold hover:bg-sky-400/15 hover:border-sky-400/40 active:scale-95 transition-all duration-300 flex items-center gap-2">
+
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7" stroke-width="1.5"/>
+                    <path stroke-linecap="round" stroke-width="1.5" d="m20 20-4-4"/>
+                </svg>
+
+                <span class="hidden sm:inline">
+                    Search
+                </span>
+
             </button>
 
         </div>
 
-        <figure class="imgback_origin relative mx-4 sm:mx-6 lg:mx-8 h-[35%] sm:h-[40%] shrink-0 rounded-2xl overflow-hidden border border-white/10">
+
+        <figure class="imgback_origin relative mx-3 sm:mx-6 lg:mx-8 h-[32%] sm:h-[37%] shrink-0 rounded-2xl overflow-hidden border border-white/10">
 
             <img src="img/file_000000002b5881f5ab280796dbf1bfe3.jpg" alt="" class="absolute inset-0 object-cover w-full h-full">
 
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
 
-<div class="absolute inset-0 flex flex-col justify-end p-6 sm:p-10 lg:p-14 bg-gradient-to-t from-black/90 via-black/35 to-transparent">
+            <div class="absolute inset-0 flex flex-col justify-end p-5 sm:p-8 lg:p-12">
 
-    <div class="w-full max-w-3xl">
+                <div class="w-full">
 
-        <h4 class="mb-3 lg:w-[40%] px-1 rounded-xl font-bold border border-white/20 flex items-center gap-2 text-xs sm:text-sm uppercase tracking-[0.3em] text-white bg-black/50 py-3">
-            <span class="w-8  h-[0.5px] bg-sky-400"></span>
-            Name origin analyzed
-        </h4>
+                    <h4 class="w-fit mb-3 px-3 py-2 rounded-xl font-bold border border-white/15 flex items-center gap-2 text-[8px] sm:text-xs uppercase tracking-[0.25em] text-white/70 bg-black/35 backdrop-blur-md">
 
-        <h2 class="flex flex-wrap items-center gap-x-3 text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white">
-            More than
-            <span class="text-sky-400 drop-shadow-[0_0_25px_rgba(56,189,248,0.45)]">
-                a name.
-            </span>
-        </h2>
+                        <span class="w-5 sm:w-7 h-px bg-sky-400"></span>
 
-        <p class="mt-5 max-w-xl text-sm sm:text-base lg:text-lg leading-7 text-white/55">
-            Discover the story, meaning, origin and identity hidden behind every name.
-        </p>
+                        Name origin analyzed
 
-        <div class="mt-7 flex items-center gap-3">
-            <div class="h-1 w-1 rounded-full bg-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.9)]"></div>
-            <span class="text-xs uppercase tracking-[0.2em] text-white/40">
-                Explore the meaning
-            </span>
-        </div>
+                        <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="9" stroke-width="1.5"/>
+                            <path stroke-linecap="round" stroke-width="1.5" d="M12 8v4l2.5 2"/>
+                        </svg>
 
-    </div>
+                    </h4>
 
-</div>
+                    <h2 class="flex flex-wrap items-center gap-x-2 sm:gap-x-3 text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white">
 
+                        More than
 
+                        <span class="text-sky-400 drop-shadow-[0_0_25px_rgba(56,189,248,0.45)]">
+                            a name.
+                        </span>
+
+                    </h2>
+
+                    <p class="mt-3 sm:mt-5 max-w-xl text-xs sm:text-base lg:text-lg leading-6 sm:leading-7 text-white/50">
+
+                        Discover the story, meaning, origin and identity hidden behind every name.
+
+                    </p>
+
+                    <div class="mt-4 sm:mt-6 flex items-center gap-2">
+
+                        <div class="h-1 w-1 rounded-full bg-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.9)]"></div>
+
+                        <span class="text-[8px] sm:text-xs uppercase tracking-[0.2em] text-white/35">
+                            Explore the meaning
+                        </span>
+
+                        <svg class="w-3 h-3 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14m-6-6 6 6-6 6"/>
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </figure>
 
-        <div class="analyzed flex-1 min-h-0 m-4 sm:m-6 lg:m-8 mt-3 sm:mt-4 lg:mt-5 rounded-2xl border border-white/10 bg-white/[0.025] overflow-hidden">
+
+       <div class="analyzed flex-1 min-h-0 m-3 sm:m-4 lg:m-5 rounded-2xl border border-white/10 bg-white/[0.025] overflow-hidden">
+
+    <div class="h-full w-full flex flex-col px-4 sm:px-6 lg:px-8 py-4 sm:py-5 text-white">
+
+        <div class="name w-full flex items-center justify-between gap-4 mb-4 sm:mb-5 shrink-0">
+
+            <div class="flex items-center gap-3 min-w-0">
+
+                <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center">
+
+                    <svg class="w-5 h-5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm-8 9a8 8 0 0 1 16 0"/>
+                    </svg>
+
+                </div>
+
+                <div class="min-w-0">
+
+                    <span class="block text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-white/25">
+                        Name origin
+                    </span>
+
+                    <h5 class="nameorigin text-lg sm:text-xl lg:text-2xl font-semibold text-white truncate">
+                        Pooria
+                    </h5>
+
+                </div>
+
+            </div>
+
+            <div class="hidden sm:flex items-center gap-2 shrink-0">
+
+                <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.8)]"></span>
+
+                <span class="text-[8px] lg:text-[9px] uppercase tracking-[0.2em] text-white/25">
+                    Possible origins
+                </span>
+
+            </div>
+
+        </div>
 
 
-<div class="h-full w-full flex flex-col items-center justify-center px-5 text-white">
+        <div class="chart w-full flex-1 min-h-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 content-start overflow-hidden">
 
-    <div class="name mb-10 text-center">
-        <h5 class="nameorigin text-2xl sm:text-3xl font-semibold text-white">
-            Pooria
-        </h5>
+        </div>
+
     </div>
 
-
-    <div class="chart w-full max-w-2xl">
-
-
-
-    </div>
+ </div>
 
 </div>
 
-
-
-        </div>
-
-    </div>
-
-        </div>
+                </div>
 
                 
                <!-- / / / / / / / / / -->

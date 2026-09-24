@@ -987,34 +987,43 @@ async function getname_chart(c) {
         nameorigin.textContent = c
 
         const res = await fetch(`https://api.nationalize.io/?name=${c}`)
+
         const data = await res.json()
 
         chart.innerHTML = ""
 
-
         data.country.map((val, index) => {
 
             let navar = val.probability * 100
+
             let plus = 0
+
             let div = document.createElement("div")
 
+            div.className = "w-full rounded-xl"
+
             div.innerHTML = `
+        <div class="w-full min-w-0 rounded-xl border border-white/[0.07] bg-white/[0.025] p-3 sm:p-3.5 hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
 
-    <div class="flex items-end justify-between mb-3">
+         <div class="flex items-center justify-between gap-2 mb-3">
 
-        <div class="flex items-center gap-3">
+             <div class="flex items-center gap-2 min-w-0">
 
-            <span class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.06] text-xs font-medium text-white/60">
-                ${val.country_id}
-            </span>
+            <div class="w-8 h-8 shrink-0 rounded-lg bg-sky-400/10 border border-sky-400/15 flex items-center justify-center">
 
-            <div class="flex flex-col gap-1">
+                <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5h12M9 3v2m4 14-4-4 4-4m-7 9h12"/>
+                </svg>
 
-                <span class="text-sm font-medium text-white/80">
+            </div>
+
+            <div class="min-w-0">
+
+                <span class="block text-sm font-semibold text-white/80 truncate">
                     ${val.country_id}
                 </span>
 
-                <span class="text-[9px] uppercase tracking-[0.2em] text-white/25">
+                <span class="block text-[8px] uppercase tracking-[0.15em] text-white/20">
                     Possible origin
                 </span>
 
@@ -1022,65 +1031,87 @@ async function getname_chart(c) {
 
         </div>
 
-        <span class="text-lg font-semibold text-sky-400">
-            ${plus.toFixed(1)}%
-        </span>
+        <div class="flex items-center shrink-0">
 
-    </div>
+            <span class="numberchart text-sm font-bold text-sky-400">
+                0
+            </span>
 
+            <span class="text-[10px] text-sky-400/50 ml-0.5">
+                %
+            </span>
 
-    <div class="relative w-full h-2.5 rounded-full bg-white/[0.05] overflow-hidden">
-
-        <div
-            class="originProgress absolute left-0 top-0 h-full w-0 rounded-full bg-sky-400 shadow-[0_0_18px_rgba(56,189,248,0.5)] transition-all duration-1000 ease-out">
         </div>
 
     </div>
 
 
-    <div class="flex justify-between my-2 text-[9px] text-white/20">
+    <div class="relative w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
 
-        <span>0%</span>
-
-        <span>25%</span>
-
-        <span>50%</span>
-
-        <span>75%</span>
-
-        <span>100%</span>
+        <div
+            class="originProgress absolute left-0 top-0 h-full w-0 rounded-full bg-sky-400 shadow-[0_0_14px_rgba(56,189,248,0.55)] transition-all duration-1000 ease-out">
+        </div>
 
     </div>
 
+
+    <div class="flex justify-between mt-2 text-[7px] text-white/15">
+
+        <span>0</span>
+        <span>25</span>
+        <span>50</span>
+        <span>75</span>
+        <span>100</span>
+
+    </div>
+
+</div>
 `
 
             chart.appendChild(div)
+            let x = setInterval(() => {
 
-            if (plus < navar) {
+                if (plus <= navar) {
 
-                x = setInterval(() => {
                     plus++
-                }, 100);
 
-            } else {
+                    div.querySelector(".originProgress").style.width = `${plus}%`
 
-                clearInterval(x)
+                    div.querySelector(".numberchart").innerHTML = `${plus.toFixed(1)}`
 
-            }
 
-            div.querySelector(".originProgress").style.width = `${plus}%`
+                    if (plus > 70) {
+
+                        div.style.border = "1px solid #22c55e"
+                        div.style.boxShadow = "0 0 20px rgba(34,197,94,0.15)"
+
+                    } else if (plus > 40 && plus <= 70) {
+
+                        div.style.border = "1px solid #eab308"
+                        div.style.boxShadow = "0 0 20px rgba(234,179,8,0.15)"
+
+                    } else if (plus > 0 && plus <= 40) {
+
+                        div.style.border = "1px solid #ef4444"
+                        div.style.boxShadow = "0 0 20px rgba(239,68,68,0.15)"
+
+                    }
+
+                } else {
+
+                    clearInterval(x)
+
+                }
+
+            }, 10)
 
         })
-
-
 
     } else {
 
         inp2.style.border = "1px solid red"
 
     }
-
-
 
 }
 
