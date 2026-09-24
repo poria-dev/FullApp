@@ -2,8 +2,10 @@
 
 const btn = document.getElementById("btn")
 const btnorigin = document.getElementById("btnorigin")
+const btncrypto = document.getElementById("btncrypto")
 const inp = document.getElementById("inp")
 const inp2 = document.getElementById("inp2")
+const inp3 = document.getElementById("inp3")
 const backimg = document.getElementById("backimg")
 const cityCountryText = document.getElementById("cityCountryText")
 const temperature = document.getElementById("temperature")
@@ -23,9 +25,13 @@ const timeSvg = document.querySelector("#timeSvg")
 const warning = document.getElementById("warning")
 const aniundersearch = document.getElementById("aniundersearch")
 const page_find_origin = document.getElementById("page_find_origin")
+const arz_digital = document.querySelector(".arz_digital")
 const chart = document.querySelector(".chart")
 const nameorigin = document.querySelector(".nameorigin")
-
+const market = document.querySelector(".market")
+const figcoin = document.querySelector(".figcoin")
+const card_trend = document.querySelector(".card_trend")
+const coins = document.querySelector(".coins")
 
 
 // variables
@@ -39,6 +45,7 @@ let api_key = "ss_ShRpvdg0oBjBzCQLaf4IsKJsOZooOFVqexSjAKQR"
 let lati = null
 let long = null
 let reg = /[a-z-A-Z]+\D/
+const regcrypto = /^[a-zA-Z0-9\s-]+$/
 let flag = true
 let x;
 // important variable
@@ -67,7 +74,7 @@ selectmenu.forEach((val) => {
         switchli.style.top = `${top}px  `
 
         page_findOrigin(x)
-
+        arz(x)
 
 
     })
@@ -91,6 +98,7 @@ menumobile.forEach((val) => {
         switchmobile.style.left = `${savetop}px`
 
         page_findOrigin(mobiletop)
+        arz(mobiletop)
 
     })
 })
@@ -117,6 +125,25 @@ function page_findOrigin(x) {
 
 // page_findOrigin
 
+
+
+
+// arz digital
+
+function arz(a) {
+
+    if (a.dataset.name == "arzdigital") {
+
+        arz_digital.classList.remove("hidden")
+        arz_digital.classList.add("flex")
+
+    } else {
+        arz_digital.classList.add("hidden")
+        arz_digital.classList.remove("flex")
+    }
+
+}
+// arz digital
 
 
 
@@ -181,13 +208,13 @@ btn.addEventListener("click", () => {
 
         }).catch(() => {
 
-            warning.classList.remove("translate-y-5", "opacity-0", "pointer-events-none")
-            warning.classList.add("translate-y-0", "opacity-100")
+            warning.classList.remove("translate-x-[120%]", "opacity-0", "pointer-events-none")
+            warning.classList.add("translate-x-0", "opacity-100")
             aniundersearch.classList.remove("flex")
             aniundersearch.classList.add("hidden")
             setTimeout(() => {
-                warning.classList.add("translate-y-5", "opacity-0", "pointer-events-none")
-                warning.classList.remove("translate-y-0", "opacity-100")
+                warning.classList.remove("translate-x-0", "opacity-100")
+                warning.classList.add("translate-x-[120%]", "opacity-0", "pointer-events-none")
                 btn.querySelector("img").classList.add("hidden")
                 btn.querySelector("img").classList.remove("flex")
                 btn.classList.add("bg-sky-400/10")
@@ -976,7 +1003,7 @@ btnorigin.addEventListener("click", async () => {
 
 })
 
-// getname_chart("pooria")
+getname_chart("pooria")
 
 async function getname_chart(c) {
 
@@ -1117,3 +1144,738 @@ async function getname_chart(c) {
 
 
 // page tow for origin find
+
+
+
+
+
+
+
+
+
+// page 3 for crypto
+
+
+let api_k_crypto = "CG-CX3fHctj779kbmwxFxpXY2FH"
+
+
+btncrypto.addEventListener("click", () => {
+
+    inp3.classList.add("border-white/10")
+    inp3.classList.remove("border-red-400")
+
+    btncrypto.setAttribute("disabled", "disabled")
+
+    let _value_crypto = inp3.value.trim().toLowerCase()
+
+    let searchIcon = btncrypto.querySelector("svg")
+    let loader = btncrypto.querySelector("img")
+
+    if (regcrypto.test(_value_crypto)) {
+
+        btncrypto.classList.remove("bg-sky-400/10")
+        btncrypto.classList.add("bg-white")
+
+        aniundersearch.classList.add("flex")
+        aniundersearch.classList.remove("hidden")
+
+        setTimeout(() => {
+
+            searchIcon.classList.add("hidden")
+
+            loader.classList.remove("hidden")
+            loader.classList.add("flex")
+
+        }, 200)
+
+        Promise.all([
+            digi(_value_crypto),
+            trend_coin()
+        ])
+            .then(() => {
+
+                searchIcon.classList.remove("hidden")
+
+                loader.classList.add("hidden")
+                loader.classList.remove("flex")
+
+                btncrypto.classList.add("bg-sky-400/10")
+                btncrypto.classList.remove("bg-white")
+
+                aniundersearch.classList.remove("flex")
+                aniundersearch.classList.add("hidden")
+
+            })
+            .catch((err) => {
+
+                console.log(err)
+
+                searchIcon.classList.remove("hidden")
+
+                loader.classList.add("hidden")
+                loader.classList.remove("flex")
+
+                btncrypto.classList.add("bg-sky-400/10")
+                btncrypto.classList.remove("bg-white")
+
+                aniundersearch.classList.remove("flex")
+                aniundersearch.classList.add("hidden")
+
+                warning.classList.remove(
+                    "translate-x-[120%]",
+                    "opacity-0",
+                    "pointer-events-none"
+                )
+
+                warning.classList.add(
+                    "translate-x-0",
+                    "opacity-100"
+                )
+
+                setTimeout(() => {
+
+                    warning.classList.remove(
+                        "translate-x-0",
+                        "opacity-100"
+                    )
+
+                    warning.classList.add(
+                        "translate-x-[120%]",
+                        "opacity-0",
+                        "pointer-events-none"
+                    )
+
+                }, 2000)
+
+            })
+
+    } else {
+
+        inp3.classList.remove("border-white/10")
+        inp3.classList.add("border-red-400")
+
+    }
+
+    setTimeout(() => {
+        btncrypto.removeAttribute("disabled")
+    }, 2000)
+
+})
+
+digi("solana")
+
+
+
+// for card
+
+let cryptoChart = null
+
+async function digi(_value_crypto) {
+
+    const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${_value_crypto}`,
+        {
+            headers: {
+                "x-cg-demo-api-key": `${api_k_crypto}`
+            }
+        }
+    )
+
+    if (res.ok) {
+
+        const data = await res.json()
+
+        if (!data.coins.length) {
+            throw new Error("Coin Not Found")
+        }
+        let id_coin = data.coins[0].id
+
+        fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${id_coin}`,
+            {
+                headers: {
+                    "x-cg-demo-api-key": `${api_k_crypto}`
+                }
+            }
+        )
+            .then(item => item.json())
+            .then(async (result) => {
+
+
+
+                market.innerHTML = `
+
+                <div class="box_markrt w-full sm:w-[calc(50%-6px)] lg:w-[calc(25%-9px)] min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
+
+                    <div class="title_box flex items-center justify-between">
+                        <span class="text-xs font-medium text-white/40">Market Cap</span>
+
+                        <svg class="w-4 h-4 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 20V10m6 10V4m6 16v-7m6 7V7"/>
+                        </svg>
+                    </div>
+
+                    <div class="number_title mt-3 text-xl sm:text-2xl font-bold text-white">
+                        ${tabdil(result[0].market_cap)}
+                    </div>
+
+                    <div class="status mt-2 flex items-center justify-between gap-2">
+
+                        <div class="color_svg flex items-center gap-1.5 text-emerald-400">
+
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m5 15 6-6 4 4 4-6"/>
+                                <path stroke-linecap="round" stroke-width="1.8" d="M17 7h2v2"/>
+                            </svg>
+
+                            <span class="text-xs font-semibold">
+                                ${result[0].market_cap_change_percentage_24h.toFixed(2)}%
+                            </span>
+
+                        </div>
+
+                        <span class="text-[10px] text-white/25">24h</span>
+
+                    </div>
+
+                </div>
+
+                <div class="box_markrt w-full sm:w-[calc(50%-6px)] lg:w-[calc(25%-9px)] min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
+
+                    <div class="title_box flex items-center justify-between">
+                        <span class="text-xs font-medium text-white/40">24h Volume</span>
+
+                        <svg class="w-4 h-4 text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 18 9 12l4 4 7-10"/>
+                        </svg>
+                    </div>
+
+                    <div class="number_title mt-3 text-xl sm:text-2xl font-bold text-white">
+                        ${tabdil(result[0].total_volume)}
+                    </div>
+
+                    <div class="status mt-2 flex items-center justify-between gap-2">
+
+                        <div class="color_volume flex items-center gap-1.5 text-emerald-400">
+
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m5 15 6-6 4 4 4-6"/>
+                                <path stroke-linecap="round" stroke-width="1.8" d="M17 7h2v2"/>
+                            </svg>
+
+                            <span class="text-xs font-semibold">
+                                ${result[0].price_change_percentage_24h.toFixed(2)}%
+                            </span>
+
+                        </div>
+
+                        <span class="text-[10px] text-white/25">24h</span>
+
+                    </div>
+
+                </div>
+
+                <div class="box_markrt w-full sm:w-[calc(50%-6px)] lg:w-[calc(25%-9px)] min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
+
+                    <div class="title_box flex items-center justify-between">
+
+                        <span class="text-xs font-medium text-white/40">
+                            24h Price Change
+                        </span>
+
+                        <svg class="w-4 h-4 text-sky-400/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="9" stroke-width="1.5"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 7v10M15 9.5c0-1.1-1.2-2-3-2s-3 .9-3 2 1.2 2 3 2 3 .9 3 2-1.2 2-3 2-3-.9-3-2"/>
+                        </svg>
+
+                    </div>
+
+                    <div class="number_title mt-3 text-xl sm:text-2xl font-bold text-white">
+                        $${result[0].current_price.toFixed(2)}
+                    </div>
+
+                    <div class="status mt-2 flex items-center justify-between gap-2">
+
+                        <div class="color_price flex items-center gap-1.5 text-emerald-400">
+
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m5 15 6-6 4 4 4-6"/>
+                                <path stroke-linecap="round" stroke-width="1.8" d="M17 7h2v2"/>
+                            </svg>
+
+                            <span class="text-xs font-semibold">
+                                ${result[0].price_change_percentage_24h.toFixed(2)}%
+                            </span>
+
+                        </div>
+
+                        <span class="text-[10px] text-white/25">
+                            24h
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="box_markrt w-full sm:w-[calc(50%-6px)] lg:w-[calc(25%-9px)] min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
+
+                    <div class="title_box flex items-center justify-between">
+
+                        <span class="text-xs font-medium text-white/40">
+                            Market Cap Rank
+                        </span>
+
+                        <svg class="w-4 h-4 text-sky-400/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 17 9 11l4 4 8-10"/>
+                        </svg>
+
+                    </div>
+
+                    <div class="number_title mt-3 text-xl sm:text-2xl font-bold text-white">
+                        ${"#" + result[0].market_cap_rank}
+                    </div>
+
+                    <div class="status mt-2 flex items-center justify-between gap-2">
+
+                        <span class="text-[10px] text-white/25">
+                            Rank
+                        </span>
+
+                    </div>
+
+                </div>
+
+                
+
+                `
+
+
+                color_change(market.querySelector(".color_svg"), result[0].market_cap_change_percentage_24h)
+
+                color_change(market.querySelector(".color_volume"), result[0].price_change_percentage_24h)
+
+                color_change(market.querySelector(".color_price"), result[0].price_change_percentage_24h)
+
+
+
+                // chart liber
+                // /  / / / / / /
+                const chartBox = document.querySelector(".chart_coin")
+
+                if (cryptoChart) {
+                    cryptoChart.remove()
+                    cryptoChart = null
+                }
+
+                chartBox.innerHTML = ""
+
+                const chart = LightweightCharts.createChart(chartBox, {
+                    autoSize: true,
+
+                    layout: {
+                        background: {
+                            type: "solid",
+                            color: "transparent"
+                        },
+
+                        textColor: "#ffffff"
+                    },
+
+                    grid: {
+                        vertLines: {
+                            color: "rgba(255,255,255,0.04)"
+                        },
+
+                        horzLines: {
+                            color: "rgba(255,255,255,0.04)"
+                        }
+                    },
+
+                    rightPriceScale: {
+                        borderColor: "rgba(255,255,255,0.08)"
+                    },
+
+                    timeScale: {
+                        borderColor: "rgba(255,255,255,0.08)"
+                    }
+                })
+
+                cryptoChart = chart
+
+                const areaSeries = chart.addSeries(
+                    LightweightCharts.AreaSeries,
+                    {
+                        lineColor: "#38bdf8",
+                        topColor: "rgba(56,189,248,0.25)",
+                        bottomColor: "rgba(56,189,248,0.02)",
+                        lineWidth: 2
+                    }
+                )
+
+                const chartRes = await fetch(
+                    `https://api.coingecko.com/api/v3/coins/${id_coin}/market_chart?vs_currency=usd&days=1`,
+                    {
+                        headers: {
+                            "x-cg-demo-api-key": `${api_k_crypto}`
+                        }
+                    }
+                )
+
+                if (!chartRes.ok) {
+                    throw new Error("Chart API Error")
+                }
+
+                const chartData = await chartRes.json()
+
+                const prices = chartData.prices.map(item => ({
+                    time: Math.floor(item[0] / 1000),
+                    value: item[1]
+                }))
+
+                areaSeries.setData(prices)
+
+                chart.timeScale().fitContent()
+
+                aboutcoinfig(result)
+
+
+
+            })
+
+        // chart liber
+        // /  / / / / / /
+    } else {
+
+        throw new Error("Crypto Search Error")
+
+    }
+
+
+}
+
+// for card
+
+function color_change(element, value) {
+
+    if (value >= 0) {
+
+        element.classList.remove("text-red-400")
+        element.classList.add("text-emerald-400")
+
+    } else {
+
+        element.classList.remove("text-emerald-400")
+        element.classList.add("text-red-400")
+
+    }
+
+}
+
+
+// for big number
+
+function tabdil(num) {
+
+    if (num >= 1000000000000) {
+
+        return (num / 1000000000000).toFixed(2) + "T"
+
+    }
+
+    if (num >= 1000000000) {
+
+        return (num / 1000000000).toFixed(2) + "B"
+
+    }
+
+    if (num >= 1000000) {
+
+        return (num / 1000000).toFixed(2) + "M"
+
+    }
+
+    if (num >= 1000) {
+
+        return (num / 1000).toFixed(2) + "K"
+
+    }
+
+    return num.toFixed(2)
+
+}
+
+// for big number
+
+
+
+
+
+// for img and about coin
+function aboutcoinfig(x) {
+
+
+    figcoin.innerHTML = `
+        
+
+    <img src="${x[0].image}" alt="" class="namecoin w-10 h-10 sm:w-12 sm:h-12 rounded-full shrink-0">
+
+        <h4 class="name_coin flex flex-col gap-1 min-w-0 text-sm sm:text-base font-semibold text-white">
+            <span class="truncate">${x[0].id}</span>
+            <span class="symbol text-[11px] text-white/30 uppercase">${x[0].symbol}</span>
+        </h4>
+
+        <h3 class="price_icon ml-auto text-lg sm:text-2xl font-bold text-white whitespace-nowrap">
+        ${x[0].current_price}$
+        </h3>
+
+        <span class="up_down_coin shrink-0 px-2 py-1 rounded-lg text-xs font-semibold bg-emerald-400/10 text-emerald-400">
+            ${(x[0].price_change_percentage_24h).toFixed(2)}%
+        </span>
+
+
+        
+        `
+    if (price_change_percentage_24h >= 0) {
+
+        figcoin.querySelector(".up_down_coin").classList.remove("text-red-400")
+        figcoin.querySelector(".up_down_coin").classList.add("text-emerald-400")
+
+    } else {
+
+        figcoin.querySelector(".up_down_coin").classList.add("text-red-400")
+        figcoin.querySelector(".up_down_coin").classList.remove("text-emerald-400")
+
+    }
+
+}
+
+// for img and about coin
+
+
+// trend important tooo colllllllllllllll
+
+trend_coin()
+all_coins()
+
+function trend_coin(put) {
+
+    return fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1`, {
+        headers: {
+            "x-cg-demo-api-key": `${api_k_crypto}`
+        }
+    }).then(res => res.json()).then((data) => {
+
+        card_trend.innerHTML = ""
+
+        for (let i = 1; i <= 3; i++) {
+
+            let ran = parseInt(Math.random() * 100)
+
+            let coin = data[ran]
+
+            card_trend.innerHTML += `
+
+            <div class="w-full">
+
+                <figure class="w-full min-h-[82px] flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.025] hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
+
+                    <img class="imgtrend w-10 h-10 rounded-full shrink-0" src="${coin.image}" alt="${coin.name}">
+
+                    <h4 class="nametrend min-w-0 flex-1 truncate text-sm font-semibold text-white">
+                        ${coin.name}
+                    </h4>
+
+                    <div class="flex flex-col items-end gap-1 shrink-0">
+
+                        <span class="pricetrend text-sm font-semibold text-white">
+                            $${coin.current_price.toFixed(2)}
+                        </span>
+
+                        <span class="up_down_trend text-[11px] font-medium ${coin.price_change_percentage_24h >= 0
+                    ? "text-emerald-400"
+                    : "text-red-400"
+                }">
+
+                            ${coin.price_change_percentage_24h.toFixed(2)}%
+
+                        </span>
+
+                    </div>
+
+                    <span class="icontrend shrink-0">
+
+                        ${coin.price_change_percentage_24h >= 0
+
+                    ?
+
+                    `
+                            <svg class="w-10 h-6 text-emerald-400" viewBox="0 0 40 24" fill="none">
+
+                                <path
+                                    d="M1 20C5 20 6 15 10 16C14 17 15 10 19 12C23 14 25 5 29 8C33 11 34 4 39 2"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+                            `
+
+                    :
+
+                    `
+                            <svg class="w-10 h-6 text-red-400" viewBox="0 0 40 24" fill="none">
+
+                                <path
+                                    d="M1 4C5 4 6 9 10 8C14 7 15 14 19 12C23 10 25 19 29 16C33 13 34 20 39 22"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+                            `
+                }
+
+                    </span>
+
+                </figure>
+
+            </div>
+
+            `
+        }
+
+    }).catch(err => {
+
+        console.log(err)
+
+    })
+
+}
+
+// trend important tooo colllllllllllllll
+
+
+
+
+// all coins
+
+
+
+
+function all_coins() {
+
+    fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1`, {
+        headers: {
+            "x-cg-demo-api-key": `${api_k_crypto}`
+        }
+    }).then(res => res.json()).then((data) => {
+
+        coins.innerHTML = ""
+
+        data.forEach((coin) => {
+
+            coins.innerHTML += `
+
+            <div class="w-full p-3">
+
+                <div class="w-full min-h-[78px] flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.025] hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
+
+                    <img
+                        class="w-9 h-9 rounded-full shrink-0"
+                        src="${coin.image}"
+                        alt="${coin.name}"
+                    >
+
+                    <div class="min-w-0 flex-1">
+
+                        <h4 class="truncate text-sm font-semibold text-white">
+                            ${coin.name}
+                        </h4>
+
+                        <span class="text-[10px] text-white/30 uppercase">
+                            ${coin.symbol}
+                        </span>
+
+                    </div>
+
+                    <div class="flex flex-col items-end gap-1 shrink-0">
+
+                        <span class="text-sm font-semibold text-white">
+                            $${coin.current_price.toFixed(2)}
+                        </span>
+
+                        <span class="text-[11px] font-medium ${coin.price_change_percentage_24h >= 0
+                    ? "text-emerald-400"
+                    : "text-red-400"
+                }">
+
+                            ${coin.price_change_percentage_24h.toFixed(2)}%
+
+                        </span>
+
+                    </div>
+
+                    <span class="shrink-0">
+
+                        ${coin.price_change_percentage_24h >= 0
+
+                    ?
+
+                    `
+                            <svg class="w-9 h-5 text-emerald-400" viewBox="0 0 40 24" fill="none">
+
+                                <path
+                                    d="M1 20C5 20 6 15 10 16C14 17 15 10 19 12C23 14 25 5 29 8C33 11 34 4 39 2"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+                            `
+
+                    :
+
+                    `
+                            <svg class="w-9 h-5 text-red-400" viewBox="0 0 40 24" fill="none">
+
+                                <path
+                                    d="M1 4C5 4 6 9 10 8C14 7 15 14 19 12C23 10 25 19 29 16C33 13 34 20 39 22"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+                            `
+                }
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            `
+        })
+
+    }).catch(err => {
+
+        console.log(err)
+
+    })
+
+}
+
+
+
+
+// all coins
+
+
+
+
+
+// page 3 for crypto
+
+

@@ -16,3 +16,21 @@
     background: rgba(255, 255, 255, 0.15);
     border-radius: 100%;
 }
+
+
+.coins::-webkit-scrollbar {
+    width: 4px;
+}
+
+.coins::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.coins::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+}
+
+.coins::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.45);
+}
