@@ -694,25 +694,32 @@ function el_create(ite) {
             let div = document.createElement("div")
 
             div.innerHTML = `
-                <div class="card w-[145px] sm:w-[155px] lg:flex-1 min-w-[145px] h-full relative overflow-hidden flex flex-col items-center justify-between p-4 border border-white/10 rounded-2xl bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.06] hover:border-white/20 transition-all duration-300 group">
+                <div class="card w-[145px] sm:w-[155px] lg:flex-1 min-w-[145px] xl:min-w-0 h-full relative overflow-hidden flex flex-col items-center justify-between p-3 sm:p-4 border border-white/10 rounded-2xl bg-white/[0.03] backdrop-blur-xl hover:bg-white/[0.055] hover:border-white/20 transition-all duration-300 group font-[font3]">
 
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 rounded-full bg-sky-400/50 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                    <div class="time_next_day w-full text-center text-[9px] sm:text-xs lg:text-sm font-[font5] font-semibold text-white/45 truncate">
 
-                    <div class="time_next_day w-full text-center text-xs sm:text-sm font-semibold text-white/50">
                         ${day}
+
                     </div>
+
 
                     <div class="icon_next_day flex items-center justify-center w-full flex-1 text-amber-300 drop-shadow-[0_0_20px_rgba(251,191,36,0.25)]">
+
                     </div>
+
 
                     <div class="temp_next_day flex items-start justify-center text-white">
 
-                        <span class="text-3xl sm:text-4xl font-black tracking-tight">
+                        <span class="text-3xl sm:text-4xl lg:text-5xl font-[font4] font-black tracking-tight">
+
                             ${val.daily.temperature_2m_max[i]}
+
                         </span>
 
-                        <sup class="text-sm sm:text-base font-bold text-white/50 mt-1">
+                        <sup class="text-xs sm:text-sm lg:text-base font-[font7] font-bold text-white/45 mt-1">
+
                             o
+
                         </sup>
 
                     </div>
@@ -976,9 +983,8 @@ function hours(abouthours) {
 
 
             let li = document.createElement("li")
+            li.className = "flex items-center justify-between gap-3 px-4 py-4 border-b border-white/10 min-w-0"
             li.innerHTML = `
-            
-                <li class="flex items-center justify-between gap-3 px-4 py-4 border-b border-white/10">
 
                                     <span class="time_in_list text-sm text-white/50">
 
@@ -1015,9 +1021,6 @@ function hours(abouthours) {
 
                                     </span>
 
-                                </li>
-
-            
             
             `
 
@@ -1051,12 +1054,13 @@ function hours(abouthours) {
 btnorigin.addEventListener("click", async () => {
 
     let _valueorigin = inp2.value.trim().toLowerCase()
+
     getname_chart(_valueorigin)
 
 })
 
-getname_chart("pooria")
 
+getname_chart("pooria")
 async function getname_chart(c) {
 
     inp2.style.border = ""
@@ -1079,104 +1083,221 @@ async function getname_chart(c) {
 
             let div = document.createElement("div")
 
-            div.className = "w-full rounded-xl"
+            div.className = "w-full min-w-0 opacity-0 translate-y-3 transition-all duration-500"
 
             div.innerHTML = `
-        <div class="w-full min-w-0 rounded-xl border border-white/[0.07] bg-white/[0.025] p-3 sm:p-3.5 hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
 
-         <div class="flex items-center justify-between gap-2 mb-3">
+                <div class="group relative w-full min-w-0 rounded-2xl border border-white/[0.07] bg-white/[0.025] p-3 sm:p-4 overflow-hidden hover:bg-white/[0.045] hover:border-sky-400/20 hover:-translate-y-0.5 transition-all duration-300">
 
-             <div class="flex items-center gap-2 min-w-0">
+                    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-            <div class="w-8 h-8 shrink-0 rounded-lg bg-sky-400/10 border border-sky-400/15 flex items-center justify-center">
+                    <div class="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-sky-400/[0.04] blur-2xl group-hover:bg-sky-400/[0.08] transition-all duration-500"></div>
 
-                <svg class="w-4 h-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5h12M9 3v2m4 14-4-4 4-4m-7 9h12"/>
-                </svg>
+                    <div class="relative flex items-center justify-between gap-3">
 
-            </div>
+                        <div class="flex items-center gap-2.5 min-w-0">
 
-            <div class="min-w-0">
+                            <div class="relative w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-xl border border-sky-400/15 bg-sky-400/[0.07] flex items-center justify-center overflow-hidden">
 
-                <span class="block text-sm font-semibold text-white/80 truncate">
-                    ${val.country_id}
-                </span>
+                                <svg class="absolute w-8 h-8 text-sky-400/[0.05]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <circle cx="12" cy="12" r="9" stroke-width="1"/>
+                                    <path stroke-linecap="round" stroke-width="1" d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z"/>
+                                </svg>
 
-                <span class="block text-[8px] uppercase tracking-[0.15em] text-white/20">
-                    Possible origin
-                </span>
+                                <svg class="relative w-5 h-5 text-sky-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 
-            </div>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"/>
 
-        </div>
+                                    <circle cx="12" cy="10" r="2.2" stroke-width="1.5"/>
 
-        <div class="flex items-center shrink-0">
+                                </svg>
 
-            <span class="numberchart text-sm font-bold text-sky-400">
-                0
-            </span>
+                            </div>
 
-            <span class="text-[10px] text-sky-400/50 ml-0.5">
-                %
-            </span>
+                            <div class="min-w-0">
 
-        </div>
+                                <div class="flex items-center gap-1.5 min-w-0">
 
-    </div>
+                                    <span class="text-sm sm:text-[15px] font-semibold text-white/85 truncate">
+                                        ${val.country_id}
+                                    </span>
+
+                                    <svg class="w-3 h-3 shrink-0 text-white/15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18 6-6-6-6"/>
+
+                                    </svg>
+
+                                </div>
+
+                                <span class="block mt-0.5 text-[7px] sm:text-[8px] uppercase tracking-[0.18em] text-white/20">
+                                    Possible origin
+                                </span>
+
+                            </div>
+
+                        </div>
 
 
-    <div class="relative w-full h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
+                        <div class="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center">
 
-        <div
-            class="originProgress absolute left-0 top-0 h-full w-0 rounded-full bg-sky-400 shadow-[0_0_14px_rgba(56,189,248,0.55)] transition-all duration-1000 ease-out">
-        </div>
+                            <svg class="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 56 56">
 
-    </div>
+                                <circle
+                                    cx="28"
+                                    cy="28"
+                                    r="22"
+                                    fill="none"
+                                    stroke="rgba(255,255,255,0.06)"
+                                    stroke-width="4">
+                                </circle>
+
+                                <circle
+                                    class="originRing"
+                                    cx="28"
+                                    cy="28"
+                                    r="22"
+                                    fill="none"
+                                    stroke="#38bdf8"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                    stroke-dasharray="138.23"
+                                    stroke-dashoffset="138.23"
+                                    style="transition:stroke-dashoffset 1000ms ease-out">
+                                </circle>
+
+                            </svg>
+
+                            <div class="relative flex items-center justify-center">
+
+                                <span class="numberchart text-[11px] sm:text-xs font-bold text-sky-400">
+                                    0
+                                </span>
+
+                                <span class="text-[7px] text-sky-400/45 ml-0.5">
+                                    %
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
 
-    <div class="flex justify-between mt-2 text-[7px] text-white/15">
+                    <div class="relative mt-4">
 
-        <span>0</span>
-        <span>25</span>
-        <span>50</span>
-        <span>75</span>
-        <span>100</span>
+                        <div class="flex items-center justify-between mb-1.5">
 
-    </div>
+                            <span class="text-[7px] uppercase tracking-[0.18em] text-white/15">
+                                Probability
+                            </span>
 
-</div>
-`
+                            <span class="text-[7px] text-white/15">
+                                ${navar.toFixed(1)}%
+                            </span>
+
+                        </div>
+
+                        <div class="relative w-full h-1.5 rounded-full bg-white/[0.055] overflow-hidden">
+
+                            <div class="absolute inset-y-0 left-0 w-full opacity-20 bg-sky-400/20 blur-sm"></div>
+
+                            <div
+                                class="originProgress relative h-full w-0 rounded-full bg-sky-400 shadow-[0_0_16px_rgba(56,189,248,0.5)] transition-all duration-1000 ease-out">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="relative flex justify-between mt-2.5 text-[6px] sm:text-[7px] text-white/10">
+
+                        <span>0</span>
+                        <span>25</span>
+                        <span>50</span>
+                        <span>75</span>
+                        <span>100</span>
+
+                    </div>
+
+                </div>
+
+            `
 
             chart.appendChild(div)
+
+
+            setTimeout(() => {
+
+                div.classList.remove("opacity-0", "translate-y-3")
+
+            }, index * 100)
+
+
             let x = setInterval(() => {
 
                 if (plus <= navar) {
 
-                    plus++
+                    plus += 0.5
+
+                    if (plus > navar) {
+                        plus = navar
+                    }
+
+                    let progress = plus / 100
+
+                    let circumference = 138.23
+
+                    let offset = circumference - (circumference * progress)
 
                     div.querySelector(".originProgress").style.width = `${plus}%`
+
+                    div.querySelector(".originRing").style.strokeDashoffset = offset
 
                     div.querySelector(".numberchart").innerHTML = `${plus.toFixed(1)}`
 
 
                     if (plus > 70) {
 
-                        div.style.border = "1px solid #22c55e"
-                        div.style.boxShadow = "0 0 20px rgba(34,197,94,0.15)"
+                        div.querySelector(".originProgress").style.background = "#22c55e"
 
-                    } else if (plus > 40 && plus <= 70) {
+                        div.querySelector(".originProgress").style.boxShadow = "0 0 16px rgba(34,197,94,0.45)"
 
-                        div.style.border = "1px solid #eab308"
-                        div.style.boxShadow = "0 0 20px rgba(234,179,8,0.15)"
+                        div.querySelector(".originRing").style.stroke = "#22c55e"
 
-                    } else if (plus > 0 && plus <= 40) {
-
-                        div.style.border = "1px solid #ef4444"
-                        div.style.boxShadow = "0 0 20px rgba(239,68,68,0.15)"
+                        div.querySelector(".numberchart").style.color = "#4ade80"
 
                     }
 
-                } else {
+                    else if (plus > 40 && plus <= 70) {
+
+                        div.querySelector(".originProgress").style.background = "#eab308"
+
+                        div.querySelector(".originProgress").style.boxShadow = "0 0 16px rgba(234,179,8,0.4)"
+
+                        div.querySelector(".originRing").style.stroke = "#eab308"
+
+                        div.querySelector(".numberchart").style.color = "#facc15"
+
+                    }
+
+                    else if (plus > 0 && plus <= 40) {
+
+                        div.querySelector(".originProgress").style.background = "#ef4444"
+
+                        div.querySelector(".originProgress").style.boxShadow = "0 0 16px rgba(239,68,68,0.4)"
+
+                        div.querySelector(".originRing").style.stroke = "#ef4444"
+
+                        div.querySelector(".numberchart").style.color = "#f87171"
+
+                    }
+
+                }
+
+                else {
 
                     clearInterval(x)
 
@@ -1186,14 +1307,15 @@ async function getname_chart(c) {
 
         })
 
-    } else {
+    }
+
+    else {
 
         inp2.style.border = "1px solid red"
 
     }
 
 }
-
 
 // page tow for origin find
 
@@ -1355,7 +1477,7 @@ async function digi(_value_crypto) {
 
                 market.innerHTML = `
 
-                <div class="box_markrt w-full sm:w-[calc(50%-6px)] lg:w-[calc(25%-9px)] min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
+                <div class="box_markrt min-w-0 w-full min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
 
                     <div class="title_box flex items-center justify-between">
                         <span class="text-xs font-medium text-white/40">Market Cap</span>
@@ -1390,7 +1512,7 @@ async function digi(_value_crypto) {
 
                 </div>
 
-                <div class="box_markrt w-full sm:w-[calc(50%-6px)] lg:w-[calc(25%-9px)] min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
+                <div class="box_markrt min-w-0 w-full min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
 
                     <div class="title_box flex items-center justify-between">
                         <span class="text-xs font-medium text-white/40">24h Volume</span>
@@ -1425,7 +1547,7 @@ async function digi(_value_crypto) {
 
                 </div>
 
-                <div class="box_markrt w-full sm:w-[calc(50%-6px)] lg:w-[calc(25%-9px)] min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
+                <div class="box_markrt min-w-0 w-full min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
 
                     <div class="title_box flex items-center justify-between">
 
@@ -1467,7 +1589,7 @@ async function digi(_value_crypto) {
 
                 </div>
 
-                <div class="box_markrt w-full sm:w-[calc(50%-6px)] lg:w-[calc(25%-9px)] min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
+                <div class="box_markrt min-w-0 w-full min-h-[150px] rounded-2xl border border-white/10 bg-white/[0.025] p-4 flex flex-col justify-between hover:bg-white/[0.04] hover:border-sky-400/20 transition-all duration-300">
 
                     <div class="title_box flex items-center justify-between">
 
@@ -1574,7 +1696,6 @@ async function digi(_value_crypto) {
                 if (!chartRes.ok) {
                     throw new Error("Chart API Error")
                 }
-
                 const chartData = await chartRes.json()
 
                 const prices = chartData.prices.map(item => ({
@@ -1685,7 +1806,7 @@ function aboutcoinfig(x) {
 
         
         `
-    if (price_change_percentage_24h >= 0) {
+    if (x[0].price_change_percentage_24h >= 0) {
 
         figcoin.querySelector(".up_down_coin").classList.remove("text-red-400")
         figcoin.querySelector(".up_down_coin").classList.add("text-emerald-400")
@@ -1717,7 +1838,7 @@ function trend_coin(put) {
 
         card_trend.innerHTML = ""
 
-        for (let i = 1; i <= 3; i++) {
+        for (let i = 1; i <= 5; i++) {
 
             let ran = parseInt(Math.random() * 100)
 
@@ -1725,9 +1846,9 @@ function trend_coin(put) {
 
             card_trend.innerHTML += `
 
-            <div class="w-full">
+            <div class="w-full min-w-0">
 
-                <figure class="w-full min-h-[82px] flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.025] hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
+                <figure class="w-full min-w-0 min-h-[82px] flex items-center gap-2 sm:gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.025] hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
 
                     <img class="imgtrend w-10 h-10 rounded-full shrink-0" src="${coin.image}" alt="${coin.name}">
 
@@ -1735,13 +1856,13 @@ function trend_coin(put) {
                         ${coin.name}
                     </h4>
 
-                    <div class="flex flex-col items-end gap-1 shrink-0">
+                    <div class="flex flex-col items-end gap-1 shrink-0 min-w-0">
 
-                        <span class="pricetrend text-sm font-semibold text-white">
+                        <span class="pricetrend text-xs sm:text-sm font-semibold text-white whitespace-nowrap">
                             $${coin.current_price.toFixed(2)}
                         </span>
 
-                        <span class="up_down_trend text-[11px] font-medium ${coin.price_change_percentage_24h >= 0
+                        <span class="up_down_trend text-[10px] sm:text-[11px] font-medium whitespace-nowrap ${coin.price_change_percentage_24h >= 0
                     ? "text-emerald-400"
                     : "text-red-400"
                 }">
@@ -1833,9 +1954,9 @@ function all_coins() {
 
                 coins.innerHTML += `
 
-                    <div class="w-full p-3">
+                    <div class="w-full min-w-0 p-2 sm:p-3">
 
-                        <div class="w-full min-h-[78px] flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.025] hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
+                        <div class="w-full min-w-0 min-h-[78px] flex items-center gap-2 sm:gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.025] hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
 
                             <img
                                 class="w-9 h-9 rounded-full shrink-0"
@@ -1857,11 +1978,11 @@ function all_coins() {
 
                             <div class="flex flex-col items-end gap-1 shrink-0">
 
-                                <span class="text-sm font-semibold text-white">
+                                <span class="text-xs sm:text-sm font-semibold text-white whitespace-nowrap">
                                     $${price.toFixed(2)}
                                 </span>
 
-                                <span class="text-[11px] font-medium ${change >= 0
+                                <span class="text-[10px] sm:text-[11px] font-medium whitespace-nowrap ${change >= 0
                         ? "text-emerald-400"
                         : "text-red-400"
                     }">
@@ -2000,6 +2121,8 @@ _now()
 
 _calendar(7)
 
+// page 4 calendar
+
 function _calendar(ca) {
 
     const make_fetch = first_fetch(`https://persian-calendar-api.sajjadth.workers.dev/?year=1405&month=${ca}`)
@@ -2013,75 +2136,137 @@ function _calendar(ca) {
         data.days.forEach((val) => {
 
             text_calendar.innerHTML += `
-        <div data-off="${val.events.isHoliday}" class="todays ${val.disabled ? "opacity-30" : ""} h-full min-h-0 flex items-center justify-center rounded-lg bg-white/[0.035] border border-white/[0.07] text-white text-xs sm:text-sm md:text-base transition-all duration-200 hover:bg-sky-400/10 hover:border-sky-400/30 hover:text-sky-300 cursor-pointer">
-            <span>${val.day.jalali}</span>
-        </div>
-    `
 
+                <div
+                    data-off="${val.events.isHoliday}"
+                    class="todays ${val.disabled ? "opacity-30" : ""} h-full min-h-0 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.035] border border-white/[0.07] text-white text-[9px] sm:text-xs md:text-sm lg:text-base transition-all duration-200 hover:bg-white/[0.06] hover:border-white/20 hover:text-white cursor-pointer select-none data-[off=true]:bg-red-500 data-[off=true]:border-red-400/30 data-[off=true]:text-white">
+
+                    <span>
+                        ${val.day.jalali}
+                    </span>
+
+                </div>
+
+            `
         })
+
 
         const today = text_calendar.querySelectorAll(".todays")
 
         today.forEach((todays, index) => {
 
             if (todays.getAttribute("data-off") == "true") {
+
                 todays.classList.remove("bg-white/[0.035]")
-                todays.classList.add("bg-red-500")
+
+                todays.classList.add(
+                    "bg-red-500",
+                    "border-red-400/30",
+                    "text-white"
+                )
+
             }
 
             todays.addEventListener("click", () => {
 
-
                 if (data.days[index].events.list[0] == undefined) {
 
                     card_calendar.innerHTML = `
-        <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.035] border border-white/10">
 
-            <div class="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-sky-400/10 text-sky-300">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"/>
-                </svg>
-            </div>
+                        <div class="w-full h-full flex items-center gap-2 sm:gap-3 min-w-0">
 
-            <div class="min-w-0">
-                <div class="text-white text-sm sm:text-base font-medium">
-                    مناسبتی برای این روز ثبت نشده است
-                </div>
+                            <div class="w-9 h-9 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center rounded-xl bg-sky-400/[0.07] border border-sky-400/15">
 
-                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-xs sm:text-sm text-white/40">
-                    <span>تاریخ هجری قمری:</span>
-                    <span class="text-white/70">${data.days[index].day.hijri}</span>
-                </div>
-            </div>
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 
-        </div>
-    `
+                                    <rect x="3" y="4" width="18" height="18" rx="3" stroke-width="1.5"></rect>
+
+                                    <path stroke-linecap="round" stroke-width="1.5" d="M16 2v4M8 2v4M3 10h18"></path>
+
+                                </svg>
+
+                            </div>
+
+
+                            <div class="min-w-0">
+
+                                <div class="text-white/75 text-[9px] sm:text-xs lg:text-sm font-medium truncate">
+
+                                    مناسبتی برای این روز ثبت نشده است
+
+                                </div>
+
+
+                                <div class="flex items-center gap-1.5 sm:gap-2 mt-1">
+
+                                    <span class="text-[7px] sm:text-[9px] text-white/20">
+                                        تاریخ هجری قمری
+                                    </span>
+
+                                    <span class="w-1 h-1 rounded-full bg-white/15"></span>
+
+                                    <span class="text-[7px] sm:text-[9px] text-white/50 truncate">
+                                        ${data.days[index].day.hijri}
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `
 
                 } else {
 
                     card_calendar.innerHTML = `
-        <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-400/[0.06] border border-red-400/10">
 
-            <div class="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-red-400/10 text-red-300">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 9v4m0 4h.01M10.3 3.8 2.8 17a2 2 0 0 0 1.7 3h15a2 2 0 0 0 1.7 3L13.7 3.8a2 2 0 0 0-3.4 0Z"/>
-                </svg>
-            </div>
+                        <div class="w-full h-full flex items-center gap-2 sm:gap-3 min-w-0">
 
-            <div class="min-w-0">
-                <div class="text-red-200 text-sm sm:text-base font-medium">
-                    ${data.days[index].events.list[0].event}
-                </div>
+                            <div class="w-9 h-9 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center rounded-xl bg-red-400/[0.07] border border-red-400/15">
 
-                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-xs sm:text-sm text-white/40">
-                    <span>تاریخ هجری قمری:</span>
-                    <span class="text-white/70">${data.days[index].day.hijri}</span>
-                </div>
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 
-            </div>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3.5 20 18a2 2 0 0 1-1.7 3H5.7A2 2 0 0 1 4 18l8-14.5Z"></path>
 
-        </div>
-    `
+                                    <path stroke-linecap="round" stroke-width="1.5" d="M12 9v4"></path>
+
+                                    <circle cx="12" cy="16.5" r=".7" fill="currentColor" stroke="none"></circle>
+
+                                </svg>
+
+                            </div>
+
+
+                            <div class="min-w-0">
+
+                                <div class="text-red-200/90 text-[9px] sm:text-xs lg:text-sm font-medium truncate">
+
+                                    ${data.days[index].events.list[0].event}
+
+                                </div>
+
+
+                                <div class="flex items-center gap-1.5 sm:gap-2 mt-1">
+
+                                    <span class="text-[7px] sm:text-[9px] text-white/20">
+                                        تاریخ هجری قمری
+                                    </span>
+
+                                    <span class="w-1 h-1 rounded-full bg-red-400/40"></span>
+
+                                    <span class="text-[7px] sm:text-[9px] text-white/50 truncate">
+                                        ${data.days[index].day.hijri}
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `
+
                 }
 
             })
@@ -2096,10 +2281,6 @@ function _calendar(ca) {
 
 }
 
-
 // page 4 calendar
-
-
-// /  / /  /  /  / /  /  /
 
 

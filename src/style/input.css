@@ -34,3 +34,33 @@
 .coins::-webkit-scrollbar-thumb:hover {
     background: rgba(56, 189, 248, 0.45);
 }
+
+
+@font-face {
+    font-family: "font1";
+    src: url(../font/Ubuntu_Condensed/UbuntuCondensed-Regular.ttf);
+}
+@font-face {
+    font-family: "font2";
+    src: url(../font/Syne/Syne-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: "font3";
+    src: url(../font/Share_Tech_Mono/ShareTechMono-Regular.ttf);
+}
+@font-face {
+    font-family: "font4";
+    src: url(../font/Noto_Sans/NotoSans-Italic-VariableFont_wdth\,wght.ttf);
+}
+@font-face {
+    font-family: "font5IR";
+    src: url(../font/Exo_2/Exo2-Italic-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: "font6";
+    src: url(../font/Chewy/Chewy-Regular.ttf);
+}
+@font-face {
+    font-family: "font7";
+    src: url(../font/Asap_Sharp/AsapSharp-Italic-VariableFont_wdth\,wght.ttf);
+}

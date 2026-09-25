@@ -16,7 +16,13 @@
 
 <body class="m-0 p-0 bg-black text-white select-none">
 
-    <main class="flex flex-wrap w-full min-h-screen lg:h-screen bg-black">
+
+
+
+
+    
+
+  <main class="flex flex-wrap w-full min-h-screen lg:h-screen bg-black overflow-x-hidden">
 
         <!-- sidebar -->
 
@@ -182,7 +188,7 @@
 
         <!-- center -->
 
-        <div class="orgmain_center relative w-full lg:w-[85%] min-h-screen lg:h-screen overflow-x-hidden overflow-y-auto flex flex-wrap bg-[#050609] pb-[75px] lg:pb-0">
+        <div class="orgmain_center relative w-full lg:w-[85%] min-h-screen lg:h-screen overflow-x-hidden overflow-y-auto flex flex-wrap bg-[#050609] pb-[70px] lg:pb-0">
             
 
             <!-- toast warning -->
@@ -319,28 +325,29 @@
                <!-- / / / / / / / / / -->
 
 
-            <div id="page_find_origin" class="absolute hidden w-full h-full z-[99999] bg-[#050609]/95 backdrop-blur-xl p-3 sm:p-5 lg:p-8">
+            <div id="page_find_origin" class="absolute hidden inset-0 w-full h-[100dvh] z-[99999] bg-[#050609]/95 backdrop-blur-xl p-2 sm:p-3 lg:p-6 overflow-hidden">
 
-    <div class="w-full h-full max-w-7xl mx-auto rounded-[1.5rem] sm:rounded-[2rem] border border-white/10 bg-white/[0.025] overflow-hidden shadow-[0_25px_100px_rgba(0,0,0,0.5)] flex flex-col">
+    <div class="w-full h-full max-w-7xl mx-auto rounded-2xl sm:rounded-[2rem] border border-white/10 bg-white/[0.02] overflow-hidden flex flex-col">
 
-        <div class="inputorigin w-full shrink-0 px-3 sm:px-6 lg:px-8 py-3 sm:py-5 flex items-center gap-2 sm:gap-3">
+        <div class="inputorigin w-full h-14 sm:h-16 lg:h-[72px] shrink-0 px-3 sm:px-5 lg:px-7 flex items-center gap-2 sm:gap-3">
 
             <div class="relative w-full lg:w-[50%]">
 
-                <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-white/25 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-sky-400/35 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="11" cy="11" r="7" stroke-width="1.5"/>
                     <path stroke-linecap="round" stroke-width="1.5" d="m20 20-4-4"/>
                 </svg>
 
-                <input id="inp2" class="border border-white/10 h-11 sm:h-14 bg-white/[0.04] text-white outline-none w-full min-w-0 pl-11 sm:pl-12 pr-4 rounded-xl sm:rounded-2xl placeholder:capitalize placeholder:font-bold placeholder:text-white/30 focus:border-sky-400/40 focus:bg-white/[0.06] transition-all duration-300" type="text" placeholder="Enter a name">
+                <input id="inp2" class="border border-white/10 h-10 sm:h-12 lg:h-14 bg-white/[0.035] text-white outline-none w-full min-w-0 pl-11 sm:pl-12 pr-4 rounded-xl sm:rounded-2xl placeholder:capitalize placeholder:font-bold placeholder:text-white/25 focus:border-sky-400/40 focus:bg-white/[0.055] transition-all duration-300" type="text" placeholder="Enter a name">
 
             </div>
 
-            <button id="btnorigin" class="group shrink-0 h-11 sm:h-14 px-4 sm:px-7 rounded-xl sm:rounded-2xl border border-sky-400/20 bg-sky-400/10 text-sky-300 font-bold hover:bg-sky-400/15 hover:border-sky-400/40 active:scale-95 transition-all duration-300 flex items-center gap-2">
+            <button id="btnorigin" class="group shrink-0 h-10 sm:h-12 lg:h-14 px-4 sm:px-6 rounded-xl sm:rounded-2xl border border-sky-400/20 bg-sky-400/10 text-sky-300 font-bold hover:bg-sky-400/15 hover:border-sky-400/40 hover:shadow-[0_0_30px_rgba(56,189,248,0.08)] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
 
-                <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-6 group-hover:scale-110 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="11" cy="11" r="7" stroke-width="1.5"/>
                     <path stroke-linecap="round" stroke-width="1.5" d="m20 20-4-4"/>
+                    <path stroke-linecap="round" stroke-width="1.5" d="M7.5 11h7"/>
                 </svg>
 
                 <span class="hidden sm:inline">
@@ -352,30 +359,42 @@
         </div>
 
 
-        <figure class="imgback_origin relative mx-3 sm:mx-6 lg:mx-8 h-[32%] sm:h-[37%] shrink-0 rounded-2xl overflow-hidden border border-white/10">
+        <figure class="imgback_origin relative mx-2 sm:mx-4 lg:mx-6 h-[30%] min-h-[190px] sm:min-h-0 shrink-0 rounded-2xl sm:rounded-[1.5rem] overflow-hidden border border-white/10 group">
 
-            <img src="img/file_000000002b5881f5ab280796dbf1bfe3.jpg" alt="" class="absolute inset-0 object-cover w-full h-full">
+            <img src="img/file_000000002b5881f5ab280796dbf1bfe3.jpg" alt="" class="absolute inset-0 object-cover w-full h-full scale-[1.02] group-hover:scale-[1.05] transition-transform duration-[1200ms]">
 
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-black/5"></div>
 
-            <div class="absolute inset-0 flex flex-col justify-end p-5 sm:p-8 lg:p-12">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 
-                <div class="w-full">
+            <div class="absolute top-4 right-4 sm:top-5 sm:right-5 flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-black/20 backdrop-blur-md">
 
-                    <h4 class="w-fit mb-3 px-3 py-2 rounded-xl font-bold border border-white/15 flex items-center gap-2 text-[8px] sm:text-xs uppercase tracking-[0.25em] text-white/70 bg-black/35 backdrop-blur-md">
+                <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.9)]"></span>
 
-                        <span class="w-5 sm:w-7 h-px bg-sky-400"></span>
+                <span class="text-[7px] sm:text-[8px] uppercase tracking-[0.2em] text-white/40">
+                    Name Origin
+                </span>
+
+            </div>
+
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:p-10">
+
+                <div class="max-w-3xl">
+
+                    <h4 class="w-fit mb-2 sm:mb-3 px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl font-bold border border-white/15 flex items-center gap-2 text-[7px] sm:text-[9px] lg:text-xs uppercase tracking-[0.2em] text-white/65 bg-black/30 backdrop-blur-md">
+
+                        <span class="w-4 sm:w-6 h-px bg-sky-400"></span>
 
                         Name origin analyzed
 
-                        <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <circle cx="12" cy="12" r="9" stroke-width="1.5"/>
                             <path stroke-linecap="round" stroke-width="1.5" d="M12 8v4l2.5 2"/>
                         </svg>
 
                     </h4>
 
-                    <h2 class="flex flex-wrap items-center gap-x-2 sm:gap-x-3 text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white">
+                    <h2 class="flex flex-wrap items-center gap-x-2 sm:gap-x-3 text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1]">
 
                         More than
 
@@ -385,17 +404,17 @@
 
                     </h2>
 
-                    <p class="mt-3 sm:mt-5 max-w-xl text-xs sm:text-base lg:text-lg leading-6 sm:leading-7 text-white/50">
+                    <p class="mt-2 sm:mt-4 max-w-xl text-[10px] sm:text-sm lg:text-base leading-5 sm:leading-6 text-white/45">
 
                         Discover the story, meaning, origin and identity hidden behind every name.
 
                     </p>
 
-                    <div class="mt-4 sm:mt-6 flex items-center gap-2">
+                    <div class="mt-3 sm:mt-5 flex items-center gap-2">
 
                         <div class="h-1 w-1 rounded-full bg-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.9)]"></div>
 
-                        <span class="text-[8px] sm:text-xs uppercase tracking-[0.2em] text-white/35">
+                        <span class="text-[7px] sm:text-[9px] uppercase tracking-[0.2em] text-white/30">
                             Explore the meaning
                         </span>
 
@@ -412,58 +431,79 @@
         </figure>
 
 
-       <div class="analyzed flex-1 min-h-0 m-3 sm:m-4 lg:m-5 rounded-2xl border border-white/10 bg-white/[0.025] overflow-hidden">
+        <div class="analyzed flex-1 min-h-0 m-2 sm:m-3 lg:m-4 rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden">
 
-    <div class="h-full w-full flex flex-col px-4 sm:px-6 lg:px-8 py-4 sm:py-5 text-white">
+            <div class="h-full w-full flex flex-col px-3 sm:px-5 lg:px-7 py-3 sm:py-4 lg:py-5 text-white">
 
-        <div class="name w-full flex items-center justify-between gap-4 mb-4 sm:mb-5 shrink-0">
+                <div class="name w-full flex items-center justify-between gap-3 mb-3 sm:mb-4 shrink-0">
 
-            <div class="flex items-center gap-3 min-w-0">
+                    <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
 
-                <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center">
 
-                    <svg class="w-5 h-5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm-8 9a8 8 0 0 1 16 0"/>
-                    </svg>
+                            <svg class="w-4.5 h-4.5 sm:w-5 sm:h-5 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm-8 9a8 8 0 0 1 16 0"/>
+                            </svg>
+
+                        </div>
+
+                        <div class="min-w-0">
+
+                            <span class="block text-[7px] sm:text-[8px] uppercase tracking-[0.25em] text-white/25">
+                                Name origin
+                            </span>
+
+                            <h5 class="nameorigin text-base sm:text-xl lg:text-2xl font-semibold text-white truncate">
+                                Pooria
+                            </h5>
+
+                        </div>
+
+                    </div>
+
+                    <div class="hidden sm:flex items-center gap-2 shrink-0">
+
+                        <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.8)]"></span>
+
+                        <span class="text-[8px] lg:text-[9px] uppercase tracking-[0.2em] text-white/25">
+                            Possible origins
+                        </span>
+
+                    </div>
 
                 </div>
 
-                <div class="min-w-0">
 
-                    <span class="block text-[8px] sm:text-[9px] uppercase tracking-[0.25em] text-white/25">
-                        Name origin
+                <div class="flex items-center justify-between gap-3 mb-2 sm:mb-3 shrink-0">
+
+                    <div class="flex items-center gap-2">
+
+                        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-sky-400/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 19V9m5 10V5m5 14v-7m5 7V3"/>
+                        </svg>
+
+                        <span class="text-[7px] sm:text-[9px] uppercase tracking-[0.2em] text-white/30">
+                            Origin probability
+                        </span>
+
+                    </div>
+
+                    <span class="hidden sm:block text-[7px] lg:text-[8px] uppercase tracking-[0.18em] text-white/15">
+                        Distribution
                     </span>
 
-                    <h5 class="nameorigin text-lg sm:text-xl lg:text-2xl font-semibold text-white truncate">
-                        Pooria
-                    </h5>
+                </div>
+
+
+                <div class="chart w-full flex-1 min-h-0 grid grid-cols-3 gap-2 sm:gap-3 content-stretch auto-rows-fr overflow-hidden">
 
                 </div>
 
             </div>
-
-            <div class="hidden sm:flex items-center gap-2 shrink-0">
-
-                <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.8)]"></span>
-
-                <span class="text-[8px] lg:text-[9px] uppercase tracking-[0.2em] text-white/25">
-                    Possible origins
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="chart w-full flex-1 min-h-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 content-start overflow-hidden">
 
         </div>
 
     </div>
-
- </div>
-
-</div>
 
             </div>
 
@@ -486,119 +526,121 @@
                <!-- page 3 arz digital -->
 
 
-            <div class="arz_digital  min-h-screen lg:h-screen  absolute hidden gap-4 flex-wrap w-full z-[99999] bg-[#050609]/95 backdrop-blur-xl p-3 sm:p-5 lg:p-8 overflow-y-auto lg:overflow-hidden">
-   
-    <div class="w-full h-[10%] lg:w-[55%] flex items-center gap-2 sm:gap-3">
+<div class="arz_digital min-h-screen lg:h-screen absolute hidden flex-col w-full z-[99999] bg-[#050609]/95 backdrop-blur-xl p-3 sm:p-5 lg:p-8 overflow-y-auto overflow-x-hidden">
+
+    <div class="w-full h-auto lg:h-14 shrink-0 lg:w-[55%] flex items-center gap-2 sm:gap-3">
 
         <div class="relative flex-1 min-w-0">
 
             <svg class="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 w-5 h-5 sm:w-[22px] sm:h-[22px] text-sky-400/70 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
                 <circle cx="12" cy="12" r="8.5" stroke-width="1.6"/>
+
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M12 7v10M15 9.5c0-1.1-1.2-2-3-2s-3 .9-3 2 1.2 2 3 2 3 .9 3 2-1.2 2-3 2-3-.9-3-2"/>
+
             </svg>
 
-            <input id="inp3" class="border border-white/[0.08] h-12 sm:h-14 bg-white/[0.035] text-white outline-none w-full min-w-0 pl-12 sm:pl-14 pr-4 rounded-xl sm:rounded-2xl placeholder:font-medium placeholder:text-white/25 focus:border-sky-400/40 focus:bg-white/[0.055] focus:shadow-[0_0_30px_rgba(56,189,248,0.06)] transition-all duration-300" type="text" placeholder="Search cryptocurrency...">
-        
-        </div>
-        
-    <button id="btncrypto" class="group shrink-0 h-12 sm:h-14 px-4 sm:px-6 rounded-xl sm:rounded-2xl border border-sky-400/20 bg-sky-400/10 text-sky-300 font-semibold hover:bg-sky-400/15 hover:border-sky-400/40 hover:text-sky-200 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
-
-    <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="11" cy="11" r="7" stroke-width="1.5"/>
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 20-4-4"/>
-    </svg>
-
-    <img src="./img/icons8-loading-infinity.gif" class="hidden w-5 h-5" alt="loading">
-
-    <span class="text-xs sm:text-sm">Search</span>
-
-    </button>
-    </div>
-
-
-
-
-    <div class="box_about_coin *:my-2 *:px-2 w-full h-[80vh] lg:h-[85%] lg:w-[73%] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
-
-        <!-- card market -->
-
-        <div class="market flex flex-wrap justify-evenly gap-3 w-full">
-
-            
+            <input id="inp3" class="font-[font3] border border-white/[0.08] h-12 sm:h-14 lg:h-14 bg-white/[0.035] text-white outline-none w-full min-w-0 pl-12 sm:pl-14 pr-4 rounded-xl sm:rounded-2xl placeholder:font-[font1] placeholder:font-medium placeholder:text-white/25 focus:border-sky-400/40 focus:bg-white/[0.055] focus:shadow-[0_0_30px_rgba(56,189,248,0.06)] transition-all duration-300" type="text" placeholder="Search cryptocurrency...">
 
         </div>
 
-        <!-- card market -->
+        <button id="btncrypto" class="group shrink-0 h-12 sm:h-14 px-4 sm:px-6 rounded-xl sm:rounded-2xl border border-sky-400/20 bg-sky-400/10 text-sky-300 font-[font2] font-semibold hover:bg-sky-400/15 hover:border-sky-400/40 hover:text-sky-200 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2">
 
+            <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 
+                <circle cx="11" cy="11" r="7" stroke-width="1.5"/>
 
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m20 20-4-4"/>
 
-        <!-- about coin -->
+            </svg>
 
-<div class="about_coin w-full  mt-4 p-4 sm:p-5 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025]">
+            <img src="./img/icons8-loading-infinity.gif" class="hidden w-5 h-5" alt="loading">
 
-    <figure class="figcoin w-full flex items-center gap-3">
+            <span class="text-xs sm:text-sm font-[font2]">Search</span>
 
-   
-    </figure>
-
-
-
-   <div class="chart_coin w-full h-[200px] sm:h-[250px] lg:h-[300px] mt-5 rounded-xl border border-white/5 bg-black/10 overflow-hidden">
+        </button>
 
     </div>
 
-        </div>
 
-        <!-- about coin -->
-
+    <div class="w-full flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-[minmax(0,73fr)_minmax(0,27fr)] gap-4 mt-3 sm:mt-4">
 
 
+        <div class="box_about_coin w-full min-w-0 min-h-0 rounded-2xl border border-white/10 bg-white/[0.02]">
 
-        <!-- trending  /  /  / /  / -->
+            <!-- card market -->
 
-
-        <div class="trending w-full flex flex-wrap mt-5">
-
-    <div class="titletrend w-full flex flex-wrap gap-4">
-
-        <h4 class="w-full capitalize flex items-center gap-2 text-sm sm:text-base lg:text-2xl font-semibold text-white">
-              <span class="icontrend text-orange-400 shrink-0">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                        d="M12.5 22C8.9 22 6 19.5 6 15.9c0-2.5 1.3-4.7 3.6-6.4-.1 1.7.5 2.8 1.5 3.4-.2-3.4 1.3-6.1 3.8-8.9.2 2.8 1.2 4.1 2.3 5.5 1.1 1.4 2.2 3.1 2.2 5.5C19.4 18.8 16.5 22 12.5 22Z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                          d="M10.5 17.5c0-1.2.6-2.3 1.8-3.3-.1 1.1.4 1.8 1 2.3.5.5.8 1 .8 1.7 0 1.2-.8 2.1-1.8 2.1-1 0-1.8-1-1.8-2.8Z"/>
-                    </svg>
-                </span>
-            Trending Now
-        </h4>
-
-        <div class="card_trend w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
-
-       
-
-        </div>
-    </div>
-
-        </div>
-
-    </div>
-
-    <!-- trending  /  /  / /  / -->
-
-
-
-
-
-
-    <div class="coins hidden lg:block w-full h-[120vh] lg:h-[80%] lg:w-[25%] overflow-y-auto rounded-2xl border border-white/10 bg-white/[0.02]">
-    </div>
-
-
-
+            <div class="market grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 w-full [&>.box_markrt]:!w-full [&>.box_markrt]:min-w-0">
 
             </div>
+
+            <!-- card market -->
+
+
+            <!-- about coin -->
+
+            <div class="about_coin w-full mt-4 p-3 sm:p-5 rounded-2xl border border-white/10 bg-white/[0.025] min-w-0">
+
+                <figure class="figcoin w-full flex flex-wrap items-center gap-3 min-w-0">
+
+                </figure>
+
+                <div class="chart_coin w-full h-[210px] sm:h-[250px] lg:h-[260px] mt-4 sm:mt-5 rounded-xl border border-white/5 bg-black/10 overflow-hidden">
+
+                </div>
+
+            </div>
+
+            <!-- about coin -->
+
+
+            <!-- trending  /  /  / /  / -->
+
+            <div class="trending w-full flex flex-wrap mt-5">
+
+                <div class="titletrend w-full flex flex-wrap gap-3 sm:gap-4">
+
+                    <h4 class="font-[font3] w-full capitalize flex items-center gap-2 text-sm sm:text-base lg:text-2xl font-semibold text-white">
+
+                        <span class="icontrend text-orange-400 shrink-0">
+
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M12.5 22C8.9 22 6 19.5 6 15.9c0-2.5 1.3-4.7 3.6-6.4-.1 1.7.5 2.8 1.5 3.4-.2-3.4 1.3-6.1 3.8-8.9.2 2.8 1.2 4.1 2.3 5.5 1.1 1.4 2.2 3.1 2.2 5.5C19.4 18.8 16.5 22 12.5 22Z"/>
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                    d="M10.5 17.5c0-1.2.6-2.3 1.8-3.3-.1 1.1.4 1.8 1 2.3.5.5.8 1 .8 1.7 0 1.2-.8 2.1-1.8 2.1-1 0-1.8-1-1.8-2.8Z"/>
+
+                            </svg>
+
+                        </span>
+
+                        Trending Now
+
+                    </h4>
+
+                    <div class="card_trend w-full grid grid-cols-3 gap-2 sm:gap-3">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- trending  /  /  / /  / -->
+
+        </div>
+
+
+        <div class="coins hidden lg:block w-full min-w-0 h-full min-h-0 overflow-y-auto overflow-x-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
+
+        </div>
+
+
+    </div>
+
+</div>
 
                <!-- page 3 arz digital -->
 
@@ -621,51 +663,63 @@
 
 
 
-                <div class="calendar min-h-screen h-screen lg:h-screen absolute hidden gap-3 flex-wrap w-full z-[99999] bg-[#050609]/95 backdrop-blur-xl p-2 sm:p-4 lg:p-8 overflow-hidden">
+                <div class="calendar absolute inset-0 hidden w-full h-[100dvh] z-[99999] bg-[#050609]/95 backdrop-blur-xl p-1 sm:p-3 lg:p-6 overflow-hidden">
 
-    <div class="box_all w-full lg:w-[98%] h-full lg:h-[98%] mx-auto gap-0 *:w-full flex flex-col flex-nowrap bg-white/[0.035] rounded-2xl sm:rounded-3xl border border-white/10 overflow-hidden">
+    <div class="box_all w-full h-full min-h-0 mx-auto gap-0 *:w-full flex flex-col flex-nowrap bg-white/[0.035] rounded-2xl sm:rounded-3xl border border-white/10 overflow-hidden">
 
         <!-- top -->
 
-        <div class="top_calendar shrink-0 flex flex-col sm:flex-row h-[150px] sm:h-[17%] lg:h-[15%] min-h-0 border-b border-white/10 bg-white/[0.025]">
+        <div class="top_calendar shrink-0 flex flex-row items-center h-[18%] min-h-[90px] sm:min-h-[105px] border-b border-white/10 bg-white/[0.025]">
 
-            <div class="about_calendar flex items-center px-4 sm:px-5 lg:px-8 py-3 sm:py-0 flex-1 min-w-0">
+            <div class="about_calendar flex items-center px-3 sm:px-5 lg:px-8 flex-1 min-w-0">
 
-                <div>
+                <div class="min-w-0">
 
-                    <div class="flex items-center gap-2 mb-1">
+                    <div class="flex items-center gap-2 mb-1.5 sm:mb-2">
 
-                        <span class="w-2 h-2 rounded-full bg-violet-400 shadow-[0_0_15px_rgba(167,139,250,0.9)]"></span>
+                        <span class="relative w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full shrink-0">
 
-                        <span class="today px-2  text-[9px] sm:text-lg text-white/40 uppercase tracking-[0.2em]">
-                            
+                            <span class="absolute inset-0 rounded-full bg-violet-400 blur-[3px] opacity-70"></span>
+
+                            <span class="relative block w-full h-full rounded-full bg-violet-400 shadow-[0_0_15px_rgba(167,139,250,0.9)]"></span>
+
+                        </span>
+
+                        <span class="today text-[10px] sm:text-[12px] lg:text-[20px] uppercase tracking-[0.22em] text-white/30 truncate">
                         </span>
 
                     </div>
 
-                    <h2 class="text_cal text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight"></h2>
+                    <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+
+                        <h2 class="text_cal text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight leading-none truncate">
+                        </h2>
+
+
+                    </div>
 
                 </div>
 
             </div>
 
 
-            <div class="mounth flex items-center justify-start sm:justify-center px-4 pb-2 sm:pb-0">
+            <div class="mounth flex items-center justify-center px-2 sm:px-4 lg:px-7 shrink-0">
 
-                <div class="px-5 sm:px-8 py-2.5 shadow-inner shadow-white/[0.02]">
+                <div class="px-3 sm:px-5 lg:px-7 py-2 sm:py-2.5 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.025]">
 
-                    <span class="text_mounth text-sm sm:text-base lg:text-lg font-semibold text-white/85"></span>
+                    <span class="text_mounth text-[10px] sm:text-sm lg:text-base font-semibold text-white/75 whitespace-nowrap">
+                    </span>
 
                 </div>
 
             </div>
 
 
-            <div class="btns flex items-center justify-between sm:justify-end gap-2 px-4 lg:px-8 pb-3 sm:pb-0">
+            <div class="btns flex items-center justify-end gap-1.5 sm:gap-2 px-3 sm:px-5 lg:px-8 shrink-0">
 
-                <button id="back" class="group w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-violet-500/10 hover:border-violet-400/30 transition-all duration-300">
+                <button id="back" class="group w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/45 hover:text-white hover:bg-white/[0.07] hover:border-white/20 active:scale-90 transition-all duration-300">
 
-                    <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
 
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
 
@@ -674,9 +728,9 @@
                 </button>
 
 
-                <button id="next" class="group w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/60 hover:text-white hover:bg-violet-500/10 hover:border-violet-400/30 transition-all duration-300">
+                <button id="next" class="group w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-white/45 hover:text-white hover:bg-white/[0.07] hover:border-white/20 active:scale-90 transition-all duration-300">
 
-                    <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
 
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
 
@@ -691,82 +745,106 @@
         <!-- top -->
 
 
-        <div class="org_calendar flex-1 min-h-0 w-full flex flex-col lg:flex-row gap-3 sm:gap-5 p-2 sm:p-3 lg:p-0">
+        <div class="org_calendar flex-1 min-h-0 w-full flex flex-col lg:flex-row gap-2 sm:gap-3 lg:gap-5 p-1 sm:p-3 lg:p-4 overflow-hidden">
 
-            <div class="imgs hidden lg:flex w-[20%] h-full relative overflow-hidden rounded-2xl bg-white/[0.025] border border-white/10">
+            <div class="imgs hidden lg:flex relative w-[19%] h-full min-h-0 shrink-0 overflow-hidden rounded-2xl bg-white/[0.025] border border-white/10">
 
-                <img src="img/images (1).jfif" alt="" class="object-cover ">
+                <img src="img/images (1).jfif" alt="" class="w-full h-full object-cover">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none"></div>
+
+                <div class="absolute left-0 right-0 bottom-0 p-5">
+
+                    <div class="flex items-center gap-2 mb-2">
+
+                        <span class="w-1.5 h-1.5 rounded-full bg-violet-400 shadow-[0_0_12px_rgba(167,139,250,0.8)]"></span>
+
+                        <span class="text-[8px] uppercase tracking-[0.2em] text-white/35">
+                            Persian Calendar
+                        </span>
+
+                    </div>
+
+                    <span class="text-sm text-white/70">
+                        Monthly overview
+                    </span>
+
+                </div>
 
             </div>
 
 
-            <div class="full_text_calendar w-full lg:w-[75%] h-full min-h-0 px-1 sm:px-4 flex flex-col">
+            <div class="full_text_calendar w-full lg:w-[81%] h-full min-h-0 px-0 sm:px-1 flex flex-col">
 
-                <div class="title_days  shrink-0 grid grid-cols-7 gap-1 sm:gap-2 my-5">
+                <div class="title_days shrink-0 grid grid-cols-7 gap-1 sm:gap-1.5 lg:gap-2 py-1.5 sm:py-2">
 
-                    <div class="h-9 sm:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-violet-500/[0.08] border border-violet-400/15 text-[9px] sm:text-xs md:text-sm text-violet-200/80 font-medium">
+                    <div class="h-7 sm:h-9 lg:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-violet-500/[0.08] border border-violet-400/15 text-[7px] sm:text-[9px] md:text-[11px] lg:text-xs text-violet-200/80 font-medium">
                         شنبه
                     </div>
 
-                    <div class="h-9 sm:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/10 text-[9px] sm:text-xs md:text-sm text-white/55 font-medium">
+                    <div class="h-7 sm:h-9 lg:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/[0.07] text-[7px] sm:text-[9px] md:text-[11px] lg:text-xs text-white/45 font-medium">
                         یکشنبه
                     </div>
 
-                    <div class="h-9 sm:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/10 text-[9px] sm:text-xs md:text-sm text-white/55 font-medium">
+                    <div class="h-7 sm:h-9 lg:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/[0.07] text-[7px] sm:text-[9px] md:text-[11px] lg:text-xs text-white/45 font-medium">
                         دوشنبه
                     </div>
 
-                    <div class="h-9 sm:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/10 text-[9px] sm:text-xs md:text-sm text-white/55 font-medium">
+                    <div class="h-7 sm:h-9 lg:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/[0.07] text-[7px] sm:text-[9px] md:text-[11px] lg:text-xs text-white/45 font-medium">
                         سه شنبه
                     </div>
 
-                    <div class="h-9 sm:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/10 text-[9px] sm:text-xs md:text-sm text-white/55 font-medium">
+                    <div class="h-7 sm:h-9 lg:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/[0.07] text-[7px] sm:text-[9px] md:text-[11px] lg:text-xs text-white/45 font-medium">
                         چهارشنبه
                     </div>
 
-                    <div class="h-9 sm:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/10 text-[9px] sm:text-xs md:text-sm text-white/55 font-medium">
+                    <div class="h-7 sm:h-9 lg:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/[0.07] text-[7px] sm:text-[9px] md:text-[11px] lg:text-xs text-white/45 font-medium">
                         پنجشنبه
                     </div>
 
-                    <div class="h-9 sm:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/10 text-[9px] sm:text-xs md:text-sm text-white/55 font-medium">
+                    <div class="h-7 sm:h-9 lg:h-10 flex items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.025] border border-white/[0.07] text-[7px] sm:text-[9px] md:text-[11px] lg:text-xs text-white/45 font-medium">
                         جمعه
                     </div>
 
                 </div>
 
 
-                <div class="text_calendar flex-1 min-h-0 grid grid-cols-7 gap-1 sm:gap-2 auto-rows-fr"></div>
+                <div class="text_calendar flex-1 min-h-0 grid grid-cols-7 gap-1 sm:gap-1.5 lg:gap-2 auto-rows-fr overflow-hidden">
+
+                </div>
 
             </div>
 
         </div>
 
 
-        <div class="bottom_calender shrink-0 w-full h-[105px] sm:h-[15%] lg:h-[15%] flex flex-col sm:flex-row border-t border-white/10 bg-white/[0.018]">
+        <div class="bottom_calender shrink-0 w-full h-[17%] min-h-[80px] sm:min-h-[88px] flex items-center border-t border-white/10 bg-white/[0.018]">
 
-            <div class="title_cal flex items-center px-4 sm:px-5 lg:px-8 py-3 sm:py-0">
+            <div class="title_cal flex items-center px-3 sm:px-5 lg:px-7 shrink-0">
 
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2.5 sm:gap-3">
 
-                    <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-xl flex items-center justify-center bg-violet-500/10 border border-violet-400/20">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-xl flex items-center justify-center bg-violet-500/10 border border-violet-400/20">
 
-                        <svg class="w-5 h-5 text-violet-300" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-violet-300" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24">
 
-                            <rect x="3" y="4" width="18" height="18" rx="3"/>
+                            <rect x="3" y="4" width="18" height="18" rx="3"></rect>
 
-                            <path d="M16 2v4M8 2v4M3 10h18"/>
+                            <path d="M16 2v4M8 2v4M3 10h18"></path>
+
+                            <path stroke-linecap="round" d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
 
                         </svg>
 
                     </div>
 
-                    <div>
+                    <div class="hidden sm:block">
 
-                        <p class="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-white/30">
+                        <p class="text-[7px] lg:text-[8px] uppercase tracking-[0.2em] text-white/25">
                             Selected day
                         </p>
 
-                        <span class="text-sm sm:text-base text-white/80">
+                        <span class="text-xs lg:text-sm text-white/70 whitespace-nowrap">
                             Calendar Details
                         </span>
 
@@ -777,14 +855,15 @@
             </div>
 
 
-            <div class="card_calendar flex-1 min-w-0 flex items-center px-4 sm:px-5 lg:px-8 pb-3 sm:pb-0"></div>
+            <div class="card_calendar flex-1 min-w-0 h-full flex items-center px-2 sm:px-4 lg:px-6 py-2">
+
+            </div>
 
         </div>
 
     </div>
 
                 </div>
-
 
 
 
@@ -794,408 +873,342 @@
 
             <!--  / /  /  / /  / / / //// /  / / /  /  / /  /  /  // -->
 
-
-
-
             <!-- top -->
 
-            <div class="both w-full h-[70%]  relative overflow-hidden flex flex-wrap p-3 sm:p-4 lg:px-5">
+        <div class="both w-full min-h-[calc(100dvh-70px)] lg:h-[70%] lg:min-h-0 relative overflow-hidden flex flex-wrap p-2 sm:p-3 lg:px-5 font-[font3]">
 
-                <!-- top bar -->
+    <!-- top bar -->
 
-                <div class="search_time mb-4 lg:mb-0 w-full h-[15%] relative z-10 flex flex-col lg:flex-row gap-3 lg:gap-0">
+    <div class="search_time mb-3 lg:mb-0 w-full h-auto lg:h-[15%] relative z-10 flex flex-col lg:flex-row gap-2 sm:gap-3 lg:gap-0">
 
-                    <div class="boxinput w-full lg:w-[60%] flex items-center gap-3">
+        <div class="boxinput w-full lg:w-[60%] flex items-center gap-2 sm:gap-3 min-w-0">
 
-                        <input  id="inp" class="border border-white/10 bg-white/[0.04] text-white outline-none w-full lg:w-[70%] min-w-0 px-4 lg:px-5 py-3 lg:py-4 rounded-xl placeholder:capitalize placeholder:font-bold placeholder:text-white/40 focus:border-sky-400/40 focus:bg-white/[0.06] transition-all duration-300" type="text" placeholder="city or country">
+            <div class="relative flex-1 min-w-0">
 
-                        <button id="btn" type="button" class="shrink-0 relative flex items-center justify-center border border-sky-400/30 bg-sky-400/10 text-sky-300 px-5 lg:w-[20%] py-3 lg:py-4 rounded-xl cursor-pointer hover:border-sky-400/50 hover:text-sky-200 active:scale-95 transition-all duration-300">
+                <svg class="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-sky-400/45 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 
-                            <img src="img/icons8-loading-infinity.gif" alt="" class="absolute hidden">
+                    <circle cx="11" cy="11" r="7" stroke-width="1.5"></circle>
 
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-width="1.5" d="m20 20-4-4"></path>
 
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="1.8"
-                                    d="m21 21-4.35-4.35m2.35-5.65a7 7 0 1 1-14 0c0 3.87 3.13 7 7 7s7-3.13 7-7Z" />
+                </svg>
 
-                            </svg>
-
-                        </button>
-                        
-
-                    </div>
-
-                    <div class="boxtime w-full lg:w-[40%] flex items-center justify-start lg:justify-end gap-2 lg:gap-3">
-
-                        <div
-                            class="timer flex items-center gap-2 px-4 lg:px-5 py-3 rounded-xl border border-white/10 bg-white/[0.03] text-white/70 font-semibold text-xs sm:text-sm">
-                        </div>
-
-                        <span
-                            class="flex items-center justify-center w-11 h-11 shrink-0 rounded-xl border border-amber-400/20 bg-white/[0.03] text-amber-300">
-
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-                                <circle
-                                    cx="12"
-                                    cy="12"
-                                    r="3.5"
-                                    stroke-width="1.7" />
-
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-width="1.7"
-                                    d="M12 2v2M12 20v2M4.93 4.93l1.4 1.4M17.67 17.67l1.4 1.4M2 12h2M20 12h2M4.93 19.07l-1.4-1.4M17.67 6.33l-1.4-1.4" />
-
-                            </svg>
-
-                        </span>
-
-                        <span
-                            class="flex items-center justify-center px-4 h-11 shrink-0 rounded-xl border border-white/10 bg-white/[0.03] text-white/70 font-bold">
-
-                            <sub class="text-xs mb-5">o</sub>
-
-                            C
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <!-- top bar -->
-
-
-                <!-- weather area -->
-
-                <div class="org my-5 lg:my-0 w-full h-[85%] relative z-10 flex gap-3 lg:gap-5 min-w-0">
-
-                    <!-- weather image box -->
-
-                    <div class="box_about_search relative overflow-hidden rounded-3xl border border-white/10 w-full lg:w-[72%] xl:w-[75%] h-full min-w-0 shadow-2xl">
-
-                        <!-- image -->
-
-                        <div
-                            id="backimg"
-                            class="absolute inset-0 bg-cover bg-center bg-no-repeat scale-[1.02] blur-[2px]"
-                            style="background-image: url('./img/1789737186141.jpg');">
-                        </div>
-
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div>
-
-                        <!-- weather content -->
-
-                        <div class="relative z-10 w-full h-full flex flex-col p-5 sm:p-7 lg:p-9 text-white">
-
-                            <!-- city -->
-
-                            <div class="city w-full h-[18%] flex items-start justify-between pt-1">
-
-                                <h2
-                                    id="cityCountry"
-                                    class="flex items-center gap-3 text-white font-semibold text-xl sm:text-2xl lg:text-3xl tracking-tight">
-
-                                    <span
-                                        class="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-xl bg-sky-400/10 border border-sky-400/20 text-sky-300 backdrop-blur-md shrink-0">
-
-                                        <svg
-                                            class="w-5 h-5 sm:w-6 sm:h-6"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24">
-
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="1.7"
-                                                d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" />
-
-                                            <circle
-                                                cx="12"
-                                                cy="9"
-                                                r="2.5"
-                                                stroke-width="1.7" />
-
-                                        </svg>
-
-                                    </span>
-
-                                    <span id="cityCountryText">
-
-                                        Tehran / Iran
-
-                                    </span>
-
-                                </h2>
-
-                            </div>
-
-                            <!-- city -->
-
-
-                            <!-- temperature -->
-
-                            <div class="tem_icon w-full flex-1 min-h-0 lg:pl-8 xl:pl-14 flex items-center gap-5 sm:gap-8 lg:gap-10">
-
-                                <div
-                                    id="weathericon"
-                                    class="shrink-0 flex flex-col items-center justify-center gap-1">
-
-                                    <div
-                                        id="weatherSvg"
-                                        class="flex items-center justify-center">
-
-                                        <svg
-                                            class="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 text-amber-300 drop-shadow-[0_0_30px_rgba(251,191,36,0.4)]"
-                                            viewBox="0 0 120 120"
-                                            fill="none">
-
-                                            <circle
-                                                cx="60"
-                                                cy="60"
-                                                r="22"
-                                                fill="currentColor" />
-
-                                            <g
-                                                stroke="currentColor"
-                                                stroke-width="5"
-                                                stroke-linecap="round">
-
-                                                <path d="M60 6V20" />
-
-                                                <path d="M60 100V114" />
-
-                                                <path d="M6 60H20" />
-
-                                                <path d="M100 60H114" />
-
-                                                <path d="M22 22L32 32" />
-
-                                                <path d="M88 88L98 98" />
-
-                                                <path d="M98 22L88 32" />
-
-                                                <path d="M32 88L22 98" />
-
-                                            </g>
-
-                                        </svg>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="flex items-start min-w-0">
-
-                                    <span
-                                        id="temperature"
-                                        class="text-7xl sm:text-8xl lg:text-[8rem] xl:text-[9rem] font-black tracking-[-0.08em] leading-none text-white">
-                                    </span>
-
-                                    <sup
-                                        class="text-2xl sm:text-3xl lg:text-5xl font-bold text-white/60 mt-1 sm:mt-2">
-                                    </sup>
-
-                                </div>
-
-                            </div>
-
-                            <!-- temperature -->
-
-
-                            <!-- about weather -->
-
-                            <div class="about_weather w-full min-h-[25%] justify-start flex items-center border-t border-white/15 gap-2 sm:gap-4 lg:gap-6 pt-5">
-
-                                <div class="humidity flex items-center gap-2 sm:gap-3 px-2 py-2 lg:px-4 lg:py-4 border border-white/10 bg-black/30 rounded-xl backdrop-blur-md">
-
-                                    <svg
-                                        class="w-6 h-6 sm:w-7 sm:h-7 text-sky-300 shrink-0"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24">
-
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="1.7"
-                                            d="M12 3.5S6.5 10 6.5 14.5a5.5 5.5 0 0011 0C17.5 10 12 3.5 12 3.5Z" />
-
-                                    </svg>
-
-                                    <div class="flex flex-col gap-0.5">
-
-                                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-white/85">
-
-                                            Humidity
-
-                                        </span>
-
-                                        <span id="humidity" class="text-base sm:text-xl font-bold text-white">
-                                        </span>
-
-                                    </div>
-
-                                </div>
-
-                                <div
-                                    class="wind flex items-center gap-2 sm:gap-3 px-2 py-2 lg:px-4 lg:py-4 border border-white/10 bg-black/30 rounded-xl backdrop-blur-md">
-
-                                    <svg
-                                        class="w-6 h-6 sm:w-7 sm:h-7 text-cyan-300 shrink-0"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24">
-
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-width="1.7"
-                                            d="M3 8h11a3 3 0 100-6M3 12h15a3 3 0 110 6h-2M3 16h7" />
-
-                                    </svg>
-
-                                    <div class="flex flex-col gap-0.5">
-
-                                        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-white/85">
-
-                                            Wind
-
-                                        </span>
-
-                                        <span id="windSpeed" class="text-[15px] sm:text-xl font-bold text-white">
-                                        </span>
-
-                                    </div>
-
-                                </div>
-
-                                <div id="timeicon" class="daynight flex items-center gap-2 sm:gap-3 px-1 lg:px-4 lg:py-4 py-1 border border-white/10 bg-black/30 rounded-xl backdrop-blur-md">
-
-                                    <div id="timeSvg" class="shrink-0">
-
-                                        <svg
-                                            class="w-4 h-4 lg:w-6 lg:h-6 sm:w-7 sm:h-7 text-amber-300 shrink-0"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24">
-
-                                            <circle
-                                                cx="12"
-                                                cy="12"
-                                                r="3.5"
-                                                stroke-width="1.7" />
-
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-width="1.7"
-                                                d="M12 2v2M12 20v2M4.93 4.93l1.4 1.4M17.67 17.67l1.4 1.4M2 12h2M20 12h2M4.93 19.07l-1.4-1.4M17.67 6.33l-1.4-1.4" />
-
-                                        </svg>
-
-                                    </div>
-
-                                    <div class="flex flex-col gap-0.5">
-
-                                        <span class="text-[10px]  sm:text-xs uppercase tracking-widest text-white/85">
-
-                                            Time
-
-                                        </span>
-
-                                        <span id="dayNight" class="text-base sm:text-xl font-bold text-white">
-                                        </span>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <!-- about weather -->
-
-                        </div>
-
-                    </div>
-
-                    <!-- weather image box -->
-
-
-                    <!-- next hours -->
-
-                    <div class="box_hours hidden lg:flex w-[28%] xl:w-[23%] shrink-0 h-full rounded-3xl overflow-hidden flex-col bg-[#0b0c10] border border-white/10">
-
-                        <div class="title shrink-0">
-
-                            <h5
-                                class="px-4 py-4 text-2xl lg:text-3xl capitalize font-bold border-b border-white/10">
-
-                                next hours
-
-                            </h5>
-
-                        </div>
-
-                        <!-- hours -->
-
-                        <div class="listhours flex-1 overflow-y-auto">
-
-                            <ul id="listhours" class="w-full  flex flex-wrap *:w-full">
-
-                                
-
-                            </ul>
-
-                        </div>
-
-                        <!-- hours -->
-
-                    </div>
-
-                    <!-- next hours -->
-
-                </div>
-
-                <!-- weather area -->
+                <input id="inp" class="border border-white/10 bg-white/[0.035] text-white outline-none w-full min-w-0 pl-11 sm:pl-12 pr-3 sm:pr-4 lg:pr-5 py-3 lg:py-4 rounded-xl sm:rounded-2xl placeholder:capitalize placeholder:font-[font1] placeholder:font-bold placeholder:text-white/30 focus:border-sky-400/40 focus:bg-white/[0.055] hover:border-white/15 transition-all duration-300" type="text" placeholder="city or country">
 
             </div>
 
-            <!-- top -->
+
+            <button id="btn" type="button" class="group shrink-0 relative flex items-center justify-center border border-sky-400/25 bg-sky-400/10 text-sky-300 w-11 h-11 sm:w-13 sm:h-13 lg:w-[20%] lg:h-auto lg:min-h-[56px] px-3 lg:px-5 rounded-xl sm:rounded-2xl cursor-pointer ">
+
+                <img src="img/icons8-loading-infinity.gif" alt="" class="absolute hidden z-100 w-5 h-5 sm:w-6 sm:h-6">
+
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                    <circle cx="11" cy="11" r="7" stroke-width="1.7"></circle>
+
+                    <path stroke-linecap="round" stroke-width="1.7" d="m20 20-4-4"></path>
+
+                </svg>
+
+            </button>
+
+        </div>
 
 
-            <!-- next days -->
+        <div class="boxtime w-full lg:w-[40%] flex items-center justify-between lg:justify-end gap-2 sm:gap-3 min-w-0">
 
-      <div class="nextdays w-full h-[30%] relative overflow-x-hidden px-3 sm:px-4 lg:px-5 text-white flex flex-col min-h-0">
+            <div class="timer flex items-center justify-center gap-2 px-3 sm:px-4 lg:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.03] text-white/70 font-[font2] font-semibold text-[10px] sm:text-xs lg:text-sm">
+            </div>
+
+
+            <span class="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 shrink-0 rounded-xl sm:rounded-2xl border border-amber-400/20 bg-amber-400/[0.04] text-amber-300">
+
+                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                    <circle cx="12" cy="12" r="3.5" stroke-width="1.7"></circle>
+
+                    <path stroke-linecap="round" stroke-width="1.7" d="M12 2v2M12 20v2M4.93 4.93l1.4 1.4M17.67 17.67l1.4 1.4M2 12h2M20 12h2M4.93 19.07l-1.4-1.4M17.67 6.33l-1.4 1.4"></path>
+
+                </svg>
+
+            </span>
+
+
+            <span class="flex items-center justify-center min-w-10 px-3 h-10 sm:min-w-11 sm:h-11 shrink-0 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.03] text-white/70 font-[font2] font-bold">
+
+                <sub class="text-[8px] sm:text-[10px] mb-4">o</sub>
+
+                C
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- top bar -->
+
+
+    <!-- weather area -->
+
+    <div class="org my-2 lg:my-0 w-full h-auto lg:h-[85%] relative z-10 flex flex-col lg:flex-row gap-3 lg:gap-4 xl:gap-5 min-w-0">
+
+        <!-- weather image box -->
+
+        <div class="box_about_search relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 w-full lg:w-[72%] xl:w-[75%] h-[52dvh] min-h-[390px] sm:h-[56dvh] sm:min-h-[460px] lg:h-full lg:min-h-0 min-w-0 shadow-[0_20px_70px_rgba(0,0,0,0.3)]">
+
+            <!-- image -->
+
+            <div id="backimg" class="absolute inset-0 bg-cover bg-center bg-no-repeat scale-[1.025] blur-[1.5px]" style="background-image: url('./img/1789737186141.jpg');">
+            </div>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 pointer-events-none"></div>
+
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(56,189,248,0.08),transparent_30%)] pointer-events-none"></div>
+
+            <!-- weather content -->
+
+            <div class="relative z-10 w-full h-full flex flex-col p-4 sm:p-6 lg:p-8 xl:p-10 text-white">
+
+                <!-- city -->
+
+                <div class="city w-full h-auto min-h-[15%] flex items-start justify-between pt-0.5 sm:pt-1">
+
+                    <h2 id="cityCountry" class="flex items-center gap-2.5 sm:gap-3 text-white font-[font5] font-semibold text-lg sm:text-2xl lg:text-3xl xl:text-4xl tracking-tight min-w-0">
+
+                        <span class="w-9 h-9 sm:w-11 sm:h-11 lg:w-12 lg:h-12 flex items-center justify-center rounded-xl sm:rounded-2xl bg-sky-400/10 border border-sky-400/20 text-sky-300 backdrop-blur-md shrink-0 shadow-[0_0_25px_rgba(56,189,248,0.06)]">
+
+                            <svg class="w-4.5 h-4.5 sm:w-5.5 sm:h-5.5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"></path>
+
+                                <circle cx="12" cy="9" r="2.5" stroke-width="1.7"></circle>
+
+                            </svg>
+
+                        </span>
+
+                        <span id="cityCountryText" class="truncate">
+                            Tehran / Iran
+                        </span>
+
+                    </h2>
+
+                </div>
+
+                <!-- city -->
+
+
+                <!-- temperature -->
+
+                <div class="tem_icon w-full flex-1 min-h-0 lg:pl-8 xl:pl-12 flex items-center gap-2 sm:gap-5 lg:gap-8 xl:gap-10">
+
+                    <div id="weathericon" class="shrink-0 flex flex-col items-center justify-center">
+
+                        <div id="weatherSvg" class="flex items-center justify-center">
+
+                            <svg class="w-12 h-12 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-36 xl:h-36 text-amber-300 drop-shadow-[0_0_30px_rgba(251,191,36,0.42)]" viewBox="0 0 120 120" fill="none">
+
+                                <circle cx="60" cy="60" r="22" fill="currentColor"></circle>
+
+                                <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
+
+                                    <path d="M60 6V20"></path>
+                                    <path d="M60 100V114"></path>
+                                    <path d="M6 60H20"></path>
+                                    <path d="M100 60H114"></path>
+                                    <path d="M22 22L32 32"></path>
+                                    <path d="M88 88L98 98"></path>
+                                    <path d="M98 22L88 32"></path>
+                                    <path d="M32 88L22 98"></path>
+
+                                </g>
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex items-start min-w-0">
+
+                        <span id="temperature" class="text-[3.5rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] xl:text-[9rem] font-[font4] font-black tracking-[-0.08em] leading-none text-white drop-shadow-[0_4px_25px_rgba(0,0,0,0.25)]">
+                        </span>
+
+                        <sup class="text-xl sm:text-3xl lg:text-5xl font-[font4] font-bold text-white/55 mt-1 sm:mt-2 lg:mt-3">
+                            o
+                        </sup>
+
+                    </div>
+
+                </div>
+
+                <!-- temperature -->
+
+
+                <!-- about weather -->
+
+                <div class="about_weather w-full min-h-[22%] flex items-center border-t border-white/15 gap-2 sm:gap-3 lg:gap-4 xl:gap-5 pt-4 sm:pt-5">
+
+                    <div class="humidity flex items-center gap-2 sm:gap-3 px-2.5 sm:px-3 lg:px-4 py-2.5 sm:py-3 lg:py-3.5 border border-white/10 bg-black/25 rounded-xl sm:rounded-2xl backdrop-blur-md min-w-0">
+
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-sky-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 3.5S6.5 10 6.5 14.5a5.5 5.5 0 0011 0C17.5 10 12 3.5 12 3.5Z"></path>
+
+                        </svg>
+
+                        <div class="flex flex-col gap-0.5 min-w-0">
+
+                            <span class="text-[8px] sm:text-[9px] lg:text-[10px] uppercase tracking-[0.16em] text-white/45 font-[font2]">
+                                Humidity
+                            </span>
+
+                            <span id="humidity" class="text-sm sm:text-lg lg:text-xl font-[font7] font-bold text-white truncate">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="wind flex items-center gap-2 sm:gap-3 px-2.5 sm:px-3 lg:px-4 py-2.5 sm:py-3 lg:py-3.5 border border-white/10 bg-black/25 rounded-xl sm:rounded-2xl backdrop-blur-md min-w-0">
+
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-cyan-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                            <path stroke-linecap="round" stroke-width="1.7" d="M3 8h11a3 3 0 100-6M3 12h15a3 3 0 110 6h-2M3 16h7"></path>
+
+                        </svg>
+
+                        <div class="flex flex-col gap-0.5 min-w-0">
+
+                            <span class="text-[8px] sm:text-[9px] lg:text-[10px] uppercase tracking-[0.16em] text-white/45 font-[font2]">
+                                Wind
+                            </span>
+
+                            <span id="windSpeed" class="text-sm sm:text-lg lg:text-xl font-[font7] font-bold text-white truncate">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="timeicon" class="daynight flex items-center gap-2 sm:gap-3 px-2.5 sm:px-3 lg:px-4 py-2.5 sm:py-3 lg:py-3.5 border border-white/10 bg-black/25 rounded-xl sm:rounded-2xl backdrop-blur-md min-w-0">
+
+                        <div id="timeSvg" class="shrink-0">
+
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                                <circle cx="12" cy="12" r="3.5" stroke-width="1.7"></circle>
+
+                                <path stroke-linecap="round" stroke-width="1.7" d="M12 2v2M12 20v2M4.93 4.93l1.4 1.4M17.67 17.67l1.4 1.4M2 12h2M20 12h2M4.93 19.07l-1.4-1.4M17.67 6.33l-1.4-1.4"></path>
+
+                            </svg>
+
+                        </div>
+
+                        <div class="flex flex-col gap-0.5 min-w-0">
+
+                            <span class="text-[8px] sm:text-[9px] lg:text-[10px] uppercase tracking-[0.16em] text-white/45 font-[font2]">
+                                Time
+                            </span>
+
+                            <span id="dayNight" class="text-sm sm:text-lg lg:text-xl font-[font7] font-bold text-white truncate">
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- about weather -->
+
+            </div>
+
+        </div>
+
+        <!-- weather image box -->
+
+
+        <!-- next hours -->
+
+        <div class="box_hours hidden lg:flex w-[28%] xl:w-[23%] shrink-0 h-full rounded-2xl sm:rounded-3xl overflow-hidden flex-col bg-[#0b0c10] border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.22)]">
+
+            <div class="title shrink-0 px-4 lg:px-5 py-4 border-b border-white/10">
+
+                <div class="flex items-center gap-2.5">
+
+                    <span class="w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.75)]"></span>
+
+                    <h5 class="capitalize font-[font6] font-bold text-lg lg:text-xl xl:text-2xl text-white">
+                        next hours
+                    </h5>
+
+                </div>
+
+            </div>
+
+            <!-- hours -->
+
+            <div class="listhours flex-1 min-h-0 overflow-y-auto">
+
+                <ul id="listhours" class="w-full px-2 py-2">
+                </ul>
+
+            </div>
+
+            <!-- hours -->
+
+        </div>
+
+        <!-- next hours -->
+
+    </div>
+
+    <!-- weather area -->
+
+        </div>
+
+        <!-- top -->
+
+
+        <!-- next days -->
+
+    <div class="nextdays w-full lg:w-[72%] xl:w-[68%] h-auto lg:h-[30%] min-h-[220px] sm:min-h-[240px] lg:min-h-0 relative overflow-hidden px-2 sm:px-4 lg:px-5 text-white flex flex-col font-[font3]">
 
     <div class="title_next_day flex w-full items-center justify-between shrink-0">
 
-        <h4 class="capitalize pl-2 font-bold text-xl my-2 lg:my-0 lg:text-2xl text-white">
-            7 day forecast
-        </h4>
+        <div class="flex items-center gap-2">
 
-    </div>
+            <span class="w-1.5 h-1.5 rounded-full bg-violet-400 shadow-[0_0_12px_rgba(167,139,250,0.8)]"></span>
 
-    <div class="boxcard w-full lg:w-[80%] flex-1 min-h-0 flex mt-3 lg:mt-4 gap-2.5 overflow-x-hidden overflow-y-hidden pb-2">
-    </div>
-
-      </div>
-
-            <!-- next days -->
+            <h4 class="capitalize pl-1 sm:pl-2 font-[font6] font-bold text-base sm:text-lg lg:text-xl text-white">
+                6 day forecast
+            </h4>
 
         </div>
+
+    </div>
+
+
+    <div class="boxcard w-full flex-1 min-h-0 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 mt-2.5 sm:mt-3 lg:mt-4 gap-1.5 sm:gap-2 lg:gap-2 overflow-hidden">
+
+    </div>
+
+    </div>
+        <!-- next days -->
 
         <!-- center -->
 
 
         <!-- mobile menu -->
 
-        <div class="fixed lg:hidden bottom-0 left-0 z-[1000000000000] w-full h-[72px] px-3 pb-2 pt-1 bg-[#0b0c10]/95 backdrop-blur-xl border-t border-white/10">
+        <div class="fixed lg:hidden bottom-0 left-0 z-[1000000000000] w-full h-[70px] px-2 sm:px-3 pb-1 sm:pb-2 pt-1 bg-[#0b0c10]/95 backdrop-blur-xl border-t border-white/10">
 
-            <ul class="menumobile *:capitalize w-full relative h-full flex items-center justify-around gap-1">
+            <ul class="menumobile *:capitalize w-full relative h-full flex items-center justify-around gap-0.5 sm:gap-1">
 
                 <div class="switchmobile absolute left-0 w-1/5 h-full rounded-xl text-sky-300 bg-sky-400/10 border border-sky-400/20"></div>
 
@@ -1319,15 +1332,15 @@
 
 
 
-                        <!-- about me -->
+     <!-- about me -->
 
 
 
-<div id="about" class="about hidden fixed top-0 right-0 w-full md:w-[80%] xl:w-[85%] h-screen z-[99999] bg-[#050609] text-white overflow-y-auto overflow-x-hidden">
+<div id="about" class="about hidden fixed top-0 right-0 w-full md:w-[80%] xl:w-[85%] min-h-screen h-screen z-[99999] bg-[#050609] text-white overflow-y-auto overflow-x-hidden">
 
     <div class="relative w-full min-h-full flex flex-col">
 
-        <div class="relative w-full max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="relative w-full max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-12">
 
             <div class="h-[75px] flex items-center justify-end border-b border-white/[0.07]">
 
@@ -1337,7 +1350,7 @@
 
             </div>
 
-            <div class="min-h-[calc(100vh-75px)] flex flex-col justify-center py-10 sm:py-14">
+            <div class="min-h-[calc(100dvh-75px)] flex flex-col justify-center py-8 sm:py-14">
 
                 <div class="grid lg:grid-cols-[280px_1fr] gap-8 lg:gap-14 items-center">
 
@@ -1580,22 +1593,13 @@
 
 </div>
 
+    <!-- about me -->
+
+
+</main>
 
 
 
-
-
-
-
-                <!-- about me -->
-
-
-
-
-
-
-    </main>
-    
 <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
 <script src="js/weather.js"></script>
 
