@@ -32,6 +32,14 @@ const market = document.querySelector(".market")
 const figcoin = document.querySelector(".figcoin")
 const card_trend = document.querySelector(".card_trend")
 const coins = document.querySelector(".coins")
+const calendar = document.querySelector(".calendar")
+const text_calendar = document.querySelector(".text_calendar")
+const text_mounth = document.querySelector(".text_mounth")
+const card_calendar = document.querySelector(".card_calendar")
+const today = document.querySelector(".today")
+const about = document.querySelector(".about")
+const next = document.getElementById("next")
+const back = document.getElementById("back")
 
 
 // variables
@@ -47,6 +55,7 @@ let long = null
 let reg = /[a-z-A-Z]+\D/
 const regcrypto = /^[a-zA-Z0-9\s-]+$/
 let flag = true
+let _flagg = 7
 let x;
 // important variable
 
@@ -75,6 +84,8 @@ selectmenu.forEach((val) => {
 
         page_findOrigin(x)
         arz(x)
+        _click_calc(x)
+        aboutme(x)
 
 
     })
@@ -99,6 +110,9 @@ menumobile.forEach((val) => {
 
         page_findOrigin(mobiletop)
         arz(mobiletop)
+        _click_calc(mobiletop)
+        aboutme(mobiletop)
+
 
     })
 })
@@ -144,6 +158,44 @@ function arz(a) {
 
 }
 // arz digital
+
+
+
+
+// click over calendar menu
+
+function _click_calc(cl) {
+
+    if (cl.dataset.name == "calendar") {
+
+        calendar.classList.remove("hidden")
+        calendar.classList.add("flex")
+
+    } else calendar.classList.add("hidden")
+    calendar.classList.remove("flex")
+
+}
+
+// click over calendar menu
+
+
+
+// about
+
+
+function aboutme(ab) {
+
+    if (ab.dataset.name == "aboutme") {
+
+        about.classList.remove("hidden")
+        about.classList.add("flex")
+
+    } else about.classList.add("hidden")
+    about.classList.remove("flex")
+
+}
+
+// about
 
 
 
@@ -1764,109 +1816,105 @@ function trend_coin(put) {
 
 function all_coins() {
 
-    fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1`, {
+    fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1`, {
         headers: {
-            "x-cg-demo-api-key": `${api_k_crypto}`
+            "x-cg-demo-api-key": api_k_crypto
         }
-    }).then(res => res.json()).then((data) => {
-
-        coins.innerHTML = ""
-
-        data.forEach((coin) => {
-
-            coins.innerHTML += `
-
-            <div class="w-full p-3">
-
-                <div class="w-full min-h-[78px] flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.025] hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
-
-                    <img
-                        class="w-9 h-9 rounded-full shrink-0"
-                        src="${coin.image}"
-                        alt="${coin.name}"
-                    >
-
-                    <div class="min-w-0 flex-1">
-
-                        <h4 class="truncate text-sm font-semibold text-white">
-                            ${coin.name}
-                        </h4>
-
-                        <span class="text-[10px] text-white/30 uppercase">
-                            ${coin.symbol}
-                        </span>
-
-                    </div>
-
-                    <div class="flex flex-col items-end gap-1 shrink-0">
-
-                        <span class="text-sm font-semibold text-white">
-                            $${coin.current_price.toFixed(2)}
-                        </span>
-
-                        <span class="text-[11px] font-medium ${coin.price_change_percentage_24h >= 0
-                    ? "text-emerald-400"
-                    : "text-red-400"
-                }">
-
-                            ${coin.price_change_percentage_24h.toFixed(2)}%
-
-                        </span>
-
-                    </div>
-
-                    <span class="shrink-0">
-
-                        ${coin.price_change_percentage_24h >= 0
-
-                    ?
-
-                    `
-                            <svg class="w-9 h-5 text-emerald-400" viewBox="0 0 40 24" fill="none">
-
-                                <path
-                                    d="M1 20C5 20 6 15 10 16C14 17 15 10 19 12C23 14 25 5 29 8C33 11 34 4 39 2"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                />
-
-                            </svg>
-                            `
-
-                    :
-
-                    `
-                            <svg class="w-9 h-5 text-red-400" viewBox="0 0 40 24" fill="none">
-
-                                <path
-                                    d="M1 4C5 4 6 9 10 8C14 7 15 14 19 12C23 10 25 19 29 16C33 13 34 20 39 22"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                />
-
-                            </svg>
-                            `
-                }
-
-                    </span>
-
-                </div>
-
-            </div>
-
-            `
-        })
-
-    }).catch(err => {
-
-        console.log(err)
-
     })
+        .then(res => res.json())
+        .then((data) => {
 
+            coins.innerHTML = ""
+
+            data.forEach((coin) => {
+
+                let price = coin.current_price ?? 0
+                let change = coin.price_change_percentage_24h ?? 0
+
+                coins.innerHTML += `
+
+                    <div class="w-full p-3">
+
+                        <div class="w-full min-h-[78px] flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.025] hover:bg-white/[0.045] hover:border-sky-400/20 transition-all duration-300">
+
+                            <img
+                                class="w-9 h-9 rounded-full shrink-0"
+                                src="${coin.image}"
+                                alt="${coin.name}"
+                            >
+
+                            <div class="min-w-0 flex-1">
+
+                                <h4 class="truncate text-sm font-semibold text-white">
+                                    ${coin.name}
+                                </h4>
+
+                                <span class="text-[10px] text-white/30 uppercase">
+                                    ${coin.symbol}
+                                </span>
+
+                            </div>
+
+                            <div class="flex flex-col items-end gap-1 shrink-0">
+
+                                <span class="text-sm font-semibold text-white">
+                                    $${price.toFixed(2)}
+                                </span>
+
+                                <span class="text-[11px] font-medium ${change >= 0
+                        ? "text-emerald-400"
+                        : "text-red-400"
+                    }">
+                                    ${change.toFixed(2)}%
+                                </span>
+
+                            </div>
+
+                            <span class="shrink-0">
+
+                                ${change >= 0
+
+                        ?
+
+                        `
+                                    <svg class="w-9 h-5 text-emerald-400" viewBox="0 0 40 24" fill="none">
+                                        <path
+                                            d="M1 20C5 20 6 15 10 16C14 17 15 10 19 12C23 14 25 5 29 8C33 11 34 4 39 2"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                        />
+                                    </svg>
+                                    `
+
+                        :
+
+                        `
+                                    <svg class="w-9 h-5 text-red-400" viewBox="0 0 40 24" fill="none">
+                                        <path
+                                            d="M1 4C5 4 6 9 10 8C14 7 15 14 19 12C23 10 25 19 29 16C33 13 34 20 39 22"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                        />
+                                    </svg>
+                                    `
+                    }
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                `
+            })
+
+        })
+        .catch(err => {
+            console.log("ERROR:", err)
+        })
 }
-
 
 
 
@@ -1875,7 +1923,183 @@ function all_coins() {
 
 
 
-
 // page 3 for crypto
+
+
+
+
+
+
+
+
+// /  / /  /  /  / /  /  /
+
+
+// page 4 calendar
+
+
+next.addEventListener("click", () => {
+
+    // reset
+
+    back.removeAttribute("disabled")
+
+    // reset
+
+    if (_flagg >= 12) {
+
+        next.setAttribute("disabled", "disabled")
+
+    } else {
+        next.removeAttribute("disabled")
+        _flagg++
+    }
+
+    _calendar(_flagg)
+
+})
+back.addEventListener("click", () => {
+
+    // reset
+
+    next.removeAttribute("disabled")
+
+    // reset
+
+    if (_flagg <= 1) {
+        back.setAttribute("disabled", "disabled")
+    } else {
+        _flagg--
+
+    }
+    _calendar(_flagg)
+
+})
+
+function _now() {
+
+    const t = new Date()
+
+    const year = t.toLocaleDateString("fa-IR-u-nu-latn", {
+        year: "numeric"
+    })
+
+    const month = t.toLocaleDateString("fa-IR-u-nu-latn", {
+        month: "numeric"
+    })
+
+    const day = t.toLocaleDateString("fa-IR-u-nu-latn", {
+        day: "numeric"
+    })
+
+    today.innerHTML = `${year} / ${month} / ${day}`
+
+}
+
+_now()
+
+_calendar(7)
+
+function _calendar(ca) {
+
+    const make_fetch = first_fetch(`https://persian-calendar-api.sajjadth.workers.dev/?year=1405&month=${ca}`)
+
+    make_fetch.then((data) => {
+
+        text_calendar.innerHTML = ""
+
+        text_mounth.innerHTML = `${data.header.jalali}`
+
+        data.days.forEach((val) => {
+
+            text_calendar.innerHTML += `
+        <div data-off="${val.events.isHoliday}" class="todays ${val.disabled ? "opacity-30" : ""} h-full min-h-0 flex items-center justify-center rounded-lg bg-white/[0.035] border border-white/[0.07] text-white text-xs sm:text-sm md:text-base transition-all duration-200 hover:bg-sky-400/10 hover:border-sky-400/30 hover:text-sky-300 cursor-pointer">
+            <span>${val.day.jalali}</span>
+        </div>
+    `
+
+        })
+
+        const today = text_calendar.querySelectorAll(".todays")
+
+        today.forEach((todays, index) => {
+
+            if (todays.getAttribute("data-off") == "true") {
+                todays.classList.remove("bg-white/[0.035]")
+                todays.classList.add("bg-red-500")
+            }
+
+            todays.addEventListener("click", () => {
+
+
+                if (data.days[index].events.list[0] == undefined) {
+
+                    card_calendar.innerHTML = `
+        <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/[0.035] border border-white/10">
+
+            <div class="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-sky-400/10 text-sky-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"/>
+                </svg>
+            </div>
+
+            <div class="min-w-0">
+                <div class="text-white text-sm sm:text-base font-medium">
+                    مناسبتی برای این روز ثبت نشده است
+                </div>
+
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-xs sm:text-sm text-white/40">
+                    <span>تاریخ هجری قمری:</span>
+                    <span class="text-white/70">${data.days[index].day.hijri}</span>
+                </div>
+            </div>
+
+        </div>
+    `
+
+                } else {
+
+                    card_calendar.innerHTML = `
+        <div class="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-400/[0.06] border border-red-400/10">
+
+            <div class="w-10 h-10 shrink-0 flex items-center justify-center rounded-lg bg-red-400/10 text-red-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 9v4m0 4h.01M10.3 3.8 2.8 17a2 2 0 0 0 1.7 3h15a2 2 0 0 0 1.7 3L13.7 3.8a2 2 0 0 0-3.4 0Z"/>
+                </svg>
+            </div>
+
+            <div class="min-w-0">
+                <div class="text-red-200 text-sm sm:text-base font-medium">
+                    ${data.days[index].events.list[0].event}
+                </div>
+
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-xs sm:text-sm text-white/40">
+                    <span>تاریخ هجری قمری:</span>
+                    <span class="text-white/70">${data.days[index].day.hijri}</span>
+                </div>
+
+            </div>
+
+        </div>
+    `
+                }
+
+            })
+
+        })
+
+    }).catch((err) => {
+
+        console.log("Calendar Error:", err)
+
+    })
+
+}
+
+
+// page 4 calendar
+
+
+// /  / /  /  /  / /  /  /
 
 
