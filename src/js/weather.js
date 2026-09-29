@@ -1330,7 +1330,7 @@ async function getname_chart(c) {
 // page 3 for crypto
 
 
-let api_k_crypto = "CG-CX3fHctj779kbmwxFxpXY2FH"
+let api_k_crypto = "CG-5PmXMsXQjtxcRtTUXaBW4BXP"
 
 
 btncrypto.addEventListener("click", () => {
@@ -1446,13 +1446,7 @@ let cryptoChart = null
 
 async function digi(_value_crypto) {
 
-    const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${_value_crypto}`,
-        {
-            headers: {
-                "x-cg-demo-api-key": `${api_k_crypto}`
-            }
-        }
-    )
+    const res = await fetch(`https://api.coingecko.com/api/v3/search?query=${_value_crypto}&x_cg_demo_api_key=${api_k_crypto}`)
 
     if (res.ok) {
 
@@ -1462,14 +1456,7 @@ async function digi(_value_crypto) {
             throw new Error("Coin Not Found")
         }
         let id_coin = data.coins[0].id
-
-        fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${id_coin}`,
-            {
-                headers: {
-                    "x-cg-demo-api-key": `${api_k_crypto}`
-                }
-            }
-        )
+        fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${id_coin}&x_cg_demo_api_key=${api_k_crypto}`)
             .then(item => item.json())
             .then(async (result) => {
 
@@ -1684,14 +1671,7 @@ async function digi(_value_crypto) {
                     }
                 )
 
-                const chartRes = await fetch(
-                    `https://api.coingecko.com/api/v3/coins/${id_coin}/market_chart?vs_currency=usd&days=1`,
-                    {
-                        headers: {
-                            "x-cg-demo-api-key": `${api_k_crypto}`
-                        }
-                    }
-                )
+                const chartRes = await fetch(`https://api.coingecko.com/api/v3/coins/${id_coin}/market_chart?vs_currency=usd&days=1&x_cg_demo_api_key=${api_k_crypto}`)
 
                 if (!chartRes.ok) {
                     throw new Error("Chart API Error")
@@ -1830,11 +1810,7 @@ all_coins()
 
 function trend_coin(put) {
 
-    return fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1`, {
-        headers: {
-            "x-cg-demo-api-key": `${api_k_crypto}`
-        }
-    }).then(res => res.json()).then((data) => {
+    return fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&x_cg_demo_api_key=${api_k_crypto}`).then(res => res.json()).then((data) => {
 
         card_trend.innerHTML = ""
 
@@ -1937,11 +1913,7 @@ function trend_coin(put) {
 
 function all_coins() {
 
-    fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1`, {
-        headers: {
-            "x-cg-demo-api-key": api_k_crypto
-        }
-    })
+    fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&x_cg_demo_api_key=${api_k_crypto}`)
         .then(res => res.json())
         .then((data) => {
 
